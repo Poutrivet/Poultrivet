@@ -210,7 +210,7 @@ Requires a Google Earth Engine account.
 
 ## 👥 Team
 
-Built at **[Your University Name]**, Uganda · 2026
+Built at Makerere University, Uganda · 2026
 
 ---
 
