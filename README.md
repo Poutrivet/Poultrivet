@@ -129,13 +129,21 @@ PouliVet/
 
 │   └── uganda_risk_data.json      ← Pre-computed risk data
 
+
 │
+
 ├── 📁 api/                        ← Your FastAPI backend
+
 │   ├── main.py                    ← FastAPI app
+
 │   ├── requirements.txt           ← Dependencies
+
 │   ├── runtime.txt                ← Python version
+
 │   └── .python-version            ← Python version file
+
 │
+
 ├── 📁 flutter/                    ← Flutter screens you built
 
 │   ├── lib/
@@ -150,8 +158,11 @@ PouliVet/
 
 │   │   └── main.dart
 
+
 │   └── pubspec.yaml
+
 │
+
 ├── 📁 model/                      ← YOLOv8 model info
 
 │   └── MODEL.md                   ← Model description and metrics
