@@ -8,3 +8,4 @@ class StatisticsScreen extends StatefulWidget {
 @override
   State<StatisticsScreen> createState() => _StatisticsScreenState();
 }
+class _StatisticsScreenState extends State<StatisticsScreen> {
