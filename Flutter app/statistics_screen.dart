@@ -13,3 +13,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   static const Color lightGreen = Color(0xFFE8F8F0);
    static const Color bgColor = Color(0xFFF0F2F0);
   static const Color cardColor = Colors.white;
+  static const Color darkText = Color(0xFF1A1A1A);
+  static const Color greyText = Color(0xFF888888);
+  static const Color redRisk = Color(0xFFE74C3C);
+  static const Color orangeRisk = Color(0xFFF39C12);
