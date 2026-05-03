@@ -20,3 +20,7 @@ static const Color orangeRisk = Color(0xFFF39C12);
 bool _isLoading = true;
 String? _error;
 int _highRisk = 0;
+ int _mediumRisk = 0;
+  int _lowRisk = 0;
+  int _totalDistricts = 0;
+  String _mostCommonDisease = '';
