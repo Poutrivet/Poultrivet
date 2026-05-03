@@ -24,3 +24,6 @@ int _highRisk = 0;
   int _lowRisk = 0;
   int _totalDistricts = 0;
   String _mostCommonDisease = '';
+ int _touchedDonutIndex = -1;
+  List<dynamic> _top5Districts = [];
+  Map<String, dynamic> _diseaseFrequency = {};
