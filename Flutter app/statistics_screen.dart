@@ -17,3 +17,6 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   static const Color greyText = Color(0xFF888888);
   static const Color redRisk = Color(0xFFE74C3C);
   static const Color orangeRisk = Color(0xFFF39C12);
+   bool _isLoading = true;
+  String? _error;
+  int _highRisk = 0;
