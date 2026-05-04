@@ -34,3 +34,9 @@ Map<String, dynamic> _diseaseFrequency = {};
     super.initState();
     _loadData();
   }
+Future<void> _loadData() async {
+    try {
+      setState(() {
+        _isLoading = true;
+        _error = null;
+      });
