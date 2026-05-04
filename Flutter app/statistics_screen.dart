@@ -27,3 +27,10 @@ String _mostCommonDisease = '';
 int _touchedDonutIndex = -1;
 List<dynamic> _top5Districts = [];
 Map<String, dynamic> _diseaseFrequency = {};
+
+  
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
