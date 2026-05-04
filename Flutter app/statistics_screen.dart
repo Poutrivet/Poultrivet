@@ -28,24 +28,24 @@ int _touchedDonutIndex = -1;
 List<dynamic> _top5Districts = [];
 Map<String, dynamic> _diseaseFrequency = {};
 
-  
-  @override
-  void initState() {
-    super.initState();
-    _loadData();
-  }
+
+@override
+void initState() {
+  super.initState();
+  _loadData();
+}
 Future<void> _loadData() async {
-    try {
-      setState(() {
-        _isLoading = true;
-        _error = null;
-      });
+  try {
+    setState(() {
+      _isLoading = true;
+      _error = null;
+    });
 
-       final data = await ApiService.getSummary();
+     final data = await ApiService.getSummary();
 
-      setState(() {
-        _highRisk = data['high_risk_count'] ?? 0;
-        _mediumRisk = data['medium_risk_count'] ?? 0;
-        _lowRisk = data['low_risk_count'] ?? 0;
-        _totalDistricts = data['total_monitored'] ?? 0;
-        _mostCommonDisease = data['most_common_disease'] ?? '';
+    setState(() {
+      _highRisk = data['high_risk_count'] ?? 0;
+      _mediumRisk = data['medium_risk_count'] ?? 0;
+      _lowRisk = data['low_risk_count'] ?? 0;
+      _totalDistricts = data['total_monitored'] ?? 0;
+      _mostCommonDisease = data['most_common_disease'] ?? '';
