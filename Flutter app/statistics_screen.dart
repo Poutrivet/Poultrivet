@@ -73,4 +73,11 @@ try {
           icon: const Icon(Icons.menu, color: darkText),
           onPressed: () {},
         ),
- 
+  title: const Text(
+          'PoulVet',
+          style: TextStyle(
+            color: primaryGreen,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
