@@ -53,4 +53,12 @@ try {
         _diseaseFrequency =
             Map<String, dynamic>.from(data['disease_frequency'] ?? {});
         _isLoading = false;
+    });
+    } catch (e) {
+      setState(() {
+        _error = e.toString();
+        _isLoading = false;
+      });
+    }
+  }
     
