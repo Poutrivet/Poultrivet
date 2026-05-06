@@ -61,4 +61,16 @@ try {
       });
     }
   }
-    
+     @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        backgroundColor: bgColor,
+        elevation: 0,
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.menu, color: darkText),
+          onPressed: () {},
+        ),
+ 
