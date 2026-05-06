@@ -1,0 +1,35 @@
+Satellite references
+
+
+Newcastle Disease
+Cappelle et al. (2015) — NDV circulation in wild birds across Africa https://www.cambridge.org/core/journals/epidemiology-and-infection/article/empirical-analysis-suggests-continuous-and-homogeneous-circulation-of-newcastle-disease-virus-in-a-wide-range-of-wild-bird-species-in-africa/3BF12ABBA1FD3ADDA60AC73320CA5055
+
+Sajo et al. (2026) — Evolution of NDV in Nigeria 2023-2024 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12831130/
+
+Coccidiosis
+Olabode et al. (2025) — Eimeria epidemiology in Lagos commercial farms https://www.sciencedirect.com/science/article/abs/pii/S2405939025001674
+
+Cevallos-Gordon et al. (2024) — Coccidiosis prediction in Horn of Africa https://www.sciencedirect.com/science/article/pii/S0304401724000311
+
+Avian Coccidiosis Review (2024) https://pmc.ncbi.nlm.nih.gov/articles/PMC11147979/
+
+Heat Stress
+Mangan & Siwek (2024) — Strategies to combat heat stress in poultry https://onlinelibrary.wiley.com/doi/10.1111/jpn.13916
+
+Siddiqui et al. (2022) — Meta-Analysis of Thermal Stress Response https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8832064/
+
+Zmrhal et al. (2023) — Heat Stress on Chicken Immune System https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10451628/
+
+Liu et al. (2023) — Heat Stress on Intestinal Integrity in Chickens https://pmc.ncbi.nlm.nih.gov/articles/PMC10406517/
+
+Smallholder Poultry / Africa Context
+Kemunto et al. (2024) — Public Health Importance of Poultry Diseases in Africa https://pmc.ncbi.nlm.nih.gov/articles/PMC10855203/
+
+MAAIF / Uganda Specific
+Byaruhanga et al. (2017) — Retrospective study on poultry diseases in Uganda (uses MAAIF/NADDEC data) https://pmc.ncbi.nlm.nih.gov/articles/PMC6137842/
+
+Antibiotic Use in Uganda Commercial Poultry (2023-2024 MAAIF survey) https://pmc.ncbi.nlm.nih.gov/articles/PMC12458818/
+
+ILRI / MAAIF Open Data Kit for Disease Surveillance https://www.ilri.org/news/open-data-kit-improve-livestock-disease-surveillance-and-reporting-uganda
+
+
