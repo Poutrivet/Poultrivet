@@ -49,3 +49,8 @@ try {
     _lowRisk = data['low_risk_count'] ?? 0;
     _totalDistricts = data['total_monitored'] ?? 0;
     _mostCommonDisease = data['most_common_disease'] ?? '';
+      _top5Districts = data['top5_risk_districts'] ?? [];
+        _diseaseFrequency =
+            Map<String, dynamic>.from(data['disease_frequency'] ?? {});
+        _isLoading = false;
+    
