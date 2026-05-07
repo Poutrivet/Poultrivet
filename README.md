@@ -223,6 +223,14 @@ Requires a Google Earth Engine account.
 
 Built at Makerere University, Uganda · 2026
 
+_Iyundhu Kennedy Kisame_ - **Geosptial Systems Lead**
+
+_Mukisa Rachel Jovia_ - **Systems architect**
+
+_Nsubuga Jeremiah_ - **Research and Innovation Lead**
+
+_Yiga Marvin Isaac_ - **Machine Learning Lead**
+
 ---
 
 ## 📄 License
