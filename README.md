@@ -178,9 +178,10 @@ PouliVet/
 
 |
 ├── 📁 poulipal/                   ←Chatbot logic
+
 │   ├── lib/services/
 
-│   │   ├── PouliService.dart
+│   ├── PouliService.dart
 
 
 │
