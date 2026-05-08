@@ -176,6 +176,13 @@ PouliVet/
 
 │   └── questionnaire.pdf          ← Farmer questionnaire
 
+|
+├── 📁 poulipal/                   ←Chatbot logic
+│   ├── lib/services/
+
+│   │   ├── PouliService.dart
+
+
 │
 ├── 📁 research/                   ← Research documents
 
