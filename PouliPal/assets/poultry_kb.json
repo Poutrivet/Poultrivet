@@ -1,0 +1,339 @@
+{
+  "allowed_diseases": ["cocci", "ncd", "salmonella", "healthy"],
+
+  "system_constraints": {
+    "strict_mode": true,
+    "unsupported_response": "This system only supports Coccidiosis, Newcastle Disease, and Salmonella."
+  },
+
+  "diseases": [
+    {
+      "id": "cocci",
+      "name": "Coccidiosis",
+      "type": "parasitic",
+      "severity": "high",
+      "mortality_rate": "medium to high",
+
+      "description": "A parasitic intestinal disease caused by Eimeria species affecting poultry, especially young birds.",
+
+      "causes": [
+        "Eimeria parasite infection",
+        "Wet and contaminated litter",
+        "Poor sanitation"
+      ],
+
+      "transmission": [
+        "Fecal-oral route",
+        "Contaminated feed",
+        "Dirty water",
+        "Infected droppings"
+      ],
+
+      "risk_factors": [
+        "Overcrowding",
+        "High humidity",
+        "Poor ventilation",
+        "Young birds (chicks)"
+      ],
+
+      "symptoms": {
+        "early": [
+          "Loss of appetite",
+          "Mild weakness",
+          "Ruffled feathers"
+        ],
+        "advanced": [
+          "Bloody diarrhea",
+          "Severe weakness",
+          "Weight loss",
+          "Dehydration"
+        ]
+      },
+
+      "diagnosis_methods": [
+        "Observation of bloody droppings",
+        "Microscopic fecal examination",
+        "Post-mortem intestinal lesions"
+      ],
+
+      "treatment": {
+        "medication": "Amprolium",
+        "dosage": "1g per litre of drinking water",
+        "duration": "5-7 days",
+        "supportive_care": [
+          "Provide clean water",
+          "Keep birds warm",
+          "Isolate infected birds"
+        ]
+      },
+
+      "prevention": [
+        "Keep litter dry",
+        "Avoid overcrowding",
+        "Regular cleaning of housing",
+        "Proper drainage"
+      ],
+
+      "vaccination": [
+        "Optional coccidiosis vaccine for chicks"
+      ],
+
+      "complications": [
+        "Severe dehydration",
+        "Poor growth",
+        "Death if untreated"
+      ],
+
+      "economic_impact": [
+        "Reduced growth rate",
+        "High mortality in chicks",
+        "Increased treatment costs"
+      ],
+
+      "zoonotic_risk": "No",
+
+      "biosecurity": [
+        "Disinfect poultry house regularly",
+        "Control moisture in litter",
+        "Limit movement between pens"
+      ],
+
+      "faq": [
+        { "q": "What causes coccidiosis?", "a": "It is caused by Eimeria parasites." },
+        { "q": "Is coccidiosis contagious?", "a": "Yes, it spreads through infected droppings." },
+        { "q": "Can it kill chickens?", "a": "Yes, especially young birds if untreated." },
+        { "q": "How do I treat it?", "a": "Use Amprolium in drinking water." },
+        { "q": "Can humans get it?", "a": "No, it does not infect humans." },
+        { "q": "What are early signs?", "a": "Loss of appetite and mild weakness." },
+        { "q": "What happens if untreated?", "a": "Severe dehydration and death." }
+      ]
+    },
+
+    {
+      "id": "ncd",
+      "name": "Newcastle Disease",
+      "type": "viral",
+      "severity": "very high",
+      "mortality_rate": "high",
+
+      "description": "A highly contagious viral disease affecting respiratory, digestive, and nervous systems of poultry.",
+
+      "causes": [
+        "Newcastle disease virus (NDV)"
+      ],
+
+      "transmission": [
+        "Airborne spread",
+        "Direct contact with infected birds",
+        "Contaminated equipment",
+        "Feed and water"
+      ],
+
+      "risk_factors": [
+        "Poor biosecurity",
+        "Mixing flocks",
+        "Lack of vaccination"
+      ],
+
+      "symptoms": {
+        "early": [
+          "Sneezing",
+          "Coughing",
+          "Reduced appetite"
+        ],
+        "advanced": [
+          "Paralysis",
+          "Twisted neck",
+          "Greenish diarrhea",
+          "Sudden death"
+        ]
+      },
+
+      "diagnosis_methods": [
+        "Clinical signs",
+        "Laboratory confirmation",
+        "Rapid spread observation"
+      ],
+
+      "treatment": {
+        "medication": "No cure",
+        "dosage": "N/A",
+        "duration": "N/A",
+        "supportive_care": [
+          "Isolate infected birds",
+          "Provide vitamins",
+          "Maintain warmth"
+        ]
+      },
+
+      "prevention": [
+        "Vaccinate birds regularly",
+        "Restrict farm access",
+        "Disinfect equipment"
+      ],
+
+      "vaccination": [
+        "Lasota vaccine",
+        "HB1 vaccine"
+      ],
+
+      "complications": [
+        "High mortality",
+        "Permanent neurological damage"
+      ],
+
+      "economic_impact": [
+        "Mass flock loss",
+        "Trade restrictions",
+        "High control costs"
+      ],
+
+      "zoonotic_risk": "Very low (mild eye infection in humans)",
+
+      "biosecurity": [
+        "Strict farm entry control",
+        "Disinfection points",
+        "Quarantine new birds"
+      ],
+
+      "faq": [
+        { "q": "What causes NCD?", "a": "It is caused by a virus called NDV." },
+        { "q": "Is there a cure?", "a": "No, only prevention through vaccination." },
+        { "q": "Can it kill all birds?", "a": "Yes, it can wipe out entire flocks." },
+        { "q": "How does it spread?", "a": "Through air, contact, and contaminated materials." },
+        { "q": "Can humans get it?", "a": "Rarely, and only mild symptoms." },
+        { "q": "What is the best prevention?", "a": "Regular vaccination." }
+      ]
+    },
+
+    {
+      "id": "salmonella",
+      "name": "Salmonella",
+      "type": "bacterial",
+      "severity": "moderate",
+      "mortality_rate": "low to moderate",
+
+      "description": "A bacterial infection affecting the digestive system and general health of poultry.",
+
+      "causes": [
+        "Salmonella bacteria",
+        "Contaminated feed or water"
+      ],
+
+      "transmission": [
+        "Fecal-oral route",
+        "Contaminated eggs",
+        "Dirty environment"
+      ],
+
+      "risk_factors": [
+        "Poor hygiene",
+        "Contaminated feed",
+        "Stress conditions"
+      ],
+
+      "symptoms": {
+        "early": [
+          "Loss of appetite",
+          "Lethargy"
+        ],
+        "advanced": [
+          "Greenish diarrhea",
+          "Weakness",
+          "Reduced egg production"
+        ]
+      },
+
+      "diagnosis_methods": [
+        "Laboratory testing",
+        "Bacterial culture"
+      ],
+
+      "treatment": {
+        "medication": "Oxytetracycline",
+        "dosage": "As prescribed",
+        "duration": "5-7 days",
+        "supportive_care": [
+          "Clean water supply",
+          "Improve hygiene"
+        ]
+      },
+
+      "prevention": [
+        "Maintain hygiene",
+        "Use clean feed and water",
+        "Disinfect housing"
+      ],
+
+      "vaccination": [
+        "Available in some regions"
+      ],
+
+      "complications": [
+        "Chronic infection",
+        "Spread to humans"
+      ],
+
+      "economic_impact": [
+        "Reduced egg production",
+        "Public health concerns"
+      ],
+
+      "zoonotic_risk": "Yes (can infect humans)",
+
+      "biosecurity": [
+        "Rodent control",
+        "Regular cleaning",
+        "Safe egg handling"
+      ],
+
+      "faq": [
+        { "q": "What causes salmonella?", "a": "It is caused by Salmonella bacteria." },
+        { "q": "Can humans get it?", "a": "Yes, through contaminated food." },
+        { "q": "How do I treat it?", "a": "Use antibiotics like Oxytetracycline." },
+        { "q": "Is it dangerous?", "a": "Yes, especially due to zoonotic risk." }
+      ]
+    },
+
+    {
+      "id": "healthy",
+      "name": "Healthy Bird",
+
+      "description": "A bird showing normal physical and behavioral characteristics.",
+
+      "normal_behavior": [
+        "Active",
+        "Alert",
+        "Eating well"
+      ],
+
+      "normal_physical_signs": [
+        "Bright eyes",
+        "Smooth feathers",
+        "Clean vent"
+      ],
+
+      "normal_droppings": "Firm, brown with white urates",
+
+      "maintenance": [
+        "Balanced diet",
+        "Clean water",
+        "Proper housing"
+      ],
+
+      "faq": [
+        { "q": "How do I know my bird is healthy?", "a": "It is active, eats well, and has normal droppings." },
+        { "q": "How do I keep birds healthy?", "a": "Provide proper nutrition and hygiene." }
+      ]
+    }
+  ],
+
+  "chat_templates": {
+    "list_options": "Select one: Coccidiosis, Newcastle Disease, Salmonella.",
+    "diagnosis": "The likely disease is {disease}.",
+    "info": "{disease} is a {type} disease. {description}",
+    "treatment": "Treatment: {medication}, Dosage: {dosage}, Duration: {duration}.",
+    "prevention": "Prevention: {prevention}",
+    "fallback": "Please select one of the supported diseases."
+  }
+}
