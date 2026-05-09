@@ -85,34 +85,34 @@ fontSize: 20,
 
 actions: [
 Stack(
-  children: [
-    IconButton(
-      icon: const Icon(Icons.notifications_outlined, color: darkText),
-      onPressed: () {},
-    ),
-    Positioned(
-      right: 8,
-      top: 8,
-      child: Container(
-        width: 16,
-        height: 16,
-        decoration: const BoxDecoration(
-          color: Colors.red,
-          shape: BoxShape.circle,
-        ),
-        child: const Center(
-          child: Text(
-            '3',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 9,
-              fontWeight: FontWeight.bold,
-            ),
+children: [
+  IconButton(
+    icon: const Icon(Icons.notifications_outlined, color: darkText),
+    onPressed: () {},
+  ),
+  Positioned(
+    right: 8,
+    top: 8,
+    child: Container(
+      width: 16,
+      height: 16,
+      decoration: const BoxDecoration(
+        color: Colors.red,
+        shape: BoxShape.circle,
+      ),
+      child: const Center(
+        child: Text(
+          '3',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 9,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
     ),
-  ],
+  ),
+],
 ),
 ],
 ),
