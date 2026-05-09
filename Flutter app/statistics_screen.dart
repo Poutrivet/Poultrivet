@@ -50,14 +50,14 @@ _lowRisk = data['low_risk_count'] ?? 0;
 _totalDistricts = data['total_monitored'] ?? 0;
 _mostCommonDisease = data['most_common_disease'] ?? '';
 _top5Districts = data['top5_risk_districts'] ?? [];
-  _diseaseFrequency =
-      Map<String, dynamic>.from(data['disease_frequency'] ?? {});
-  _isLoading = false;
+_diseaseFrequency =
+    Map<String, dynamic>.from(data['disease_frequency'] ?? {});
+_isLoading = false;
 });
 } catch (e) {
 setState(() {
-  _error = e.toString();
-  _isLoading = false;
+_error = e.toString();
+_isLoading = false;
 });
 }
 }
@@ -66,53 +66,53 @@ Widget build(BuildContext context) {
 return Scaffold(
 backgroundColor: bgColor,
 appBar: AppBar(
-  backgroundColor: bgColor,
-  elevation: 0,
-  centerTitle: true,
-  leading: IconButton(
-    icon: const Icon(Icons.menu, color: darkText),
-    onPressed: () {},
-  ),
+backgroundColor: bgColor,
+elevation: 0,
+centerTitle: true,
+leading: IconButton(
+  icon: const Icon(Icons.menu, color: darkText),
+  onPressed: () {},
+),
 title: const Text(
-    'PoulVet',
-    style: TextStyle(
-      color: primaryGreen,
-      fontWeight: FontWeight.bold,
-      fontSize: 20,
-    ),
+  'PoulVet',
+  style: TextStyle(
+    color: primaryGreen,
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
   ),
+),
 
 
-   actions: [
-          Stack(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.notifications_outlined, color: darkText),
-                onPressed: () {},
-              ),
-              Positioned(
-                right: 8,
-                top: 8,
-                child: Container(
-                  width: 16,
-                  height: 16,
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      '3',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 9,
-                        fontWeight: FontWeight.bold,
-                      ),
+ actions: [
+        Stack(
+          children: [
+            IconButton(
+              icon: const Icon(Icons.notifications_outlined, color: darkText),
+              onPressed: () {},
+            ),
+            Positioned(
+              right: 8,
+              top: 8,
+              child: Container(
+                width: 16,
+                height: 16,
+                decoration: const BoxDecoration(
+                  color: Colors.red,
+                  shape: BoxShape.circle,
+                ),
+                child: const Center(
+                  child: Text(
+                    '3',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 9,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
+    ),
