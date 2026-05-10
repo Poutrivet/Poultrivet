@@ -102,12 +102,12 @@ shape: BoxShape.circle,
 ),
 child: const Center(
 child: Text(
-  '3',
-  style: TextStyle(
-    color: Colors.white,
-    fontSize: 9,
-    fontWeight: FontWeight.bold,
-  ),
+'3',
+style: TextStyle(
+  color: Colors.white,
+  fontSize: 9,
+  fontWeight: FontWeight.bold,
+),
 ),
 ),
 ),
