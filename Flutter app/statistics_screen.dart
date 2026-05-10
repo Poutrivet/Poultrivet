@@ -104,9 +104,9 @@ child: const Center(
 child: Text(
 '3',
 style: TextStyle(
-  color: Colors.white,
-  fontSize: 9,
-  fontWeight: FontWeight.bold,
+color: Colors.white,
+fontSize: 9,
+fontWeight: FontWeight.bold,
 ),
 ),
 ),
