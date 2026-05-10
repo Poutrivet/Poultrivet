@@ -97,18 +97,18 @@ child: Container(
 width: 16,
 height: 16,
 decoration: const BoxDecoration(
-  color: Colors.red,
-  shape: BoxShape.circle,
+color: Colors.red,
+shape: BoxShape.circle,
 ),
 child: const Center(
-  child: Text(
-    '3',
-    style: TextStyle(
-      color: Colors.white,
-      fontSize: 9,
-      fontWeight: FontWeight.bold,
-    ),
+child: Text(
+  '3',
+  style: TextStyle(
+    color: Colors.white,
+    fontSize: 9,
+    fontWeight: FontWeight.bold,
   ),
+),
 ),
 ),
 ),
