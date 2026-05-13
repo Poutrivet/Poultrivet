@@ -115,3 +115,70 @@ fontWeight: FontWeight.bold,
 ),
 ],
 ),
+
+ body: _isLoading
+          ? _buildLoading()
+          : _error != null
+              ? _buildError()
+              : _buildContent(),
+    );
+  }
+
+  Widget _buildLoading() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const CircularProgressIndicator(color: primaryGreen),
+          const SizedBox(height: 20),
+          Text(
+            'Loading satellite data...',
+            style: TextStyle(color: greyText, fontSize: 14),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildError() {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.wifi_off, size: 64, color: Colors.grey),
+            const SizedBox(height: 16),
+            const Text(
+              'Could not load data',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: darkText,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Check your internet connection',
+              style: TextStyle(color: greyText, fontSize: 14),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: primaryGreen,
+                foregroundColor: Colors.white,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              onPressed: _loadData,
+              child: const Text('Try Again'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
