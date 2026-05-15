@@ -463,3 +463,146 @@ fontWeight: FontWeight.bold,
                   ? orangeRisk
                   : primaryGreen;
 
+     return Padding(
+            padding: EdgeInsets.only(
+                bottom: index < _top5Districts.length - 1 ? 16 : 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        '${index + 1}. $name',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: darkText,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: color.withOpacity(0.12),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        '${score.toInt()}/10',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: color,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: LinearProgressIndicator(
+                    value: score / 10.0,
+                    backgroundColor: color.withOpacity(0.12),
+                    valueColor: AlwaysStoppedAnimation<Color>(color),
+                    minHeight: 10,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  district['diseases'] ?? '',
+                  style: const TextStyle(fontSize: 11, color: greyText),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  Widget _buildDiseaseChart() {
+    if (_diseaseFrequency.isEmpty) return const SizedBox();
+
+    final sorted = _diseaseFrequency.entries.toList()
+      ..sort((a, b) => (b.value as int).compareTo(a.value as int));
+
+    final colors = [
+      redRisk,
+      orangeRisk,
+      primaryGreen,
+      const Color(0xFF3498DB),
+      const Color(0xFF9B59B6),
+    ];
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        children: sorted.asMap().entries.map((entry) {
+          final index = entry.key;
+          final item = entry.value;
+          final color = colors[index % colors.length];
+          final maxVal = sorted.first.value as int;
+          final val = item.value as int;
+
+          return Padding(
+            padding:
+                EdgeInsets.only(bottom: index < sorted.length - 1 ? 16 : 0),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 110,
+                  child: Text(
+                    item.key,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: darkText,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: LinearProgressIndicator(
+                      value: val / maxVal,
+                      backgroundColor: color.withOpacity(0.1),
+                      valueColor: AlwaysStoppedAnimation<Color>(color),
+                      minHeight: 14,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  '$val',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    color: color,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
