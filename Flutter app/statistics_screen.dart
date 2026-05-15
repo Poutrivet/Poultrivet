@@ -200,4 +200,266 @@ fontWeight: FontWeight.bold,
                 color: darkText,
               ),
             ),
-   
+     const SizedBox(height: 4),
+            Text(
+              'Powered by Sentinel-2 & MODIS satellite data',
+              style: TextStyle(fontSize: 13, color: greyText),
+            ),
+            const SizedBox(height: 20),
+            _buildSummaryCards(),
+            const SizedBox(height: 24),
+            _buildSectionTitle(
+                '🌍 National Risk Distribution', '$_totalDistricts districts'),
+            const SizedBox(height: 12),
+            _buildDonutChart(),
+            const SizedBox(height: 24),
+            _buildSectionTitle('⚠️ Top 5 Highest Risk Districts', 'This week'),
+            const SizedBox(height: 12),
+            _buildTop5Chart(),
+            const SizedBox(height: 24),
+            _buildSectionTitle(
+                '🦠 Disease Frequency Across Uganda', 'Districts flagged'),
+            const SizedBox(height: 12),
+            _buildDiseaseChart(),
+            const SizedBox(height: 16),
+            _buildDataSourceBadge(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSummaryCards() {
+    return Row(
+      children: [
+        _summaryCard(
+            'HIGH', _highRisk.toString(), redRisk, Icons.warning_amber_rounded),
+        const SizedBox(width: 10),
+        _summaryCard(
+            'MEDIUM', _mediumRisk.toString(), orangeRisk, Icons.info_outline),
+        const SizedBox(width: 10),
+        _summaryCard('LOW', _lowRisk.toString(), primaryGreen,
+            Icons.check_circle_outline),
+      ],
+    );
+  }
+
+  Widget _summaryCard(String label, String value, Color color, IconData icon) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.06),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 24),
+            const SizedBox(height: 8),
+            Text(
+              value,
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.w600,
+                color: greyText,
+                letterSpacing: 1,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title, String subtitle) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: darkText,
+          ),
+        ),
+        Text(
+          subtitle,
+          style: const TextStyle(fontSize: 12, color: greyText),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDonutChart() {
+    final total = (_highRisk + _mediumRisk + _lowRisk).toDouble();
+    if (total == 0) return const SizedBox();
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          SizedBox(
+            height: 160,
+            width: 160,
+            child: PieChart(
+              PieChartData(
+                pieTouchData: PieTouchData(
+                  touchCallback: (event, response) {
+                    setState(() {
+                      if (!event.isInterestedForInteractions ||
+                          response == null ||
+                          response.touchedSection == null) {
+                        _touchedDonutIndex = -1;
+                        return;
+                      }
+                      _touchedDonutIndex =
+                          response.touchedSection!.touchedSectionIndex;
+                    });
+                  },
+                ),
+                sectionsSpace: 3,
+                centerSpaceRadius: 45,
+                sections: [
+                  PieChartSectionData(
+                    value: _highRisk.toDouble(),
+                    color: redRisk,
+                    title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
+                    radius: _touchedDonutIndex == 0 ? 55 : 48,
+                    titleStyle: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  PieChartSectionData(
+                    value: _mediumRisk.toDouble(),
+                    color: orangeRisk,
+                    title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
+                    radius: _touchedDonutIndex == 1 ? 55 : 48,
+                    titleStyle: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  PieChartSectionData(
+                    value: _lowRisk.toDouble(),
+                    color: primaryGreen,
+                    title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
+                    radius: _touchedDonutIndex == 2 ? 55 : 48,
+                    titleStyle: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(width: 24),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _donutLegendItem('HIGH Risk', _highRisk, redRisk),
+                const SizedBox(height: 16),
+                _donutLegendItem('MEDIUM Risk', _mediumRisk, orangeRisk),
+                const SizedBox(height: 16),
+                _donutLegendItem('LOW Risk', _lowRisk, primaryGreen),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _donutLegendItem(String label, int value, Color color) {
+    return Row(
+      children: [
+        Container(
+          width: 12,
+          height: 12,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(3),
+          ),
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Text(
+            label,
+            style: const TextStyle(fontSize: 12, color: greyText),
+          ),
+        ),
+        Text(
+          value.toString(),
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTop5Chart() {
+    if (_top5Districts.isEmpty) return const SizedBox();
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        children: _top5Districts.asMap().entries.map((entry) {
+          final index = entry.key;
+          final district = entry.value;
+          final name = district['district'] ?? '';
+          final score = (district['risk_score'] ?? 0).toDouble();
+          final level = district['risk'] ?? district['risk_level'] ?? 'HIGH';
+          final color = level == 'HIGH'
+              ? redRisk
+              : level == 'MEDIUM'
+                  ? orangeRisk
+                  : primaryGreen;
+
