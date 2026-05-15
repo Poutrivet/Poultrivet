@@ -605,4 +605,41 @@ fontWeight: FontWeight.bold,
       ),
     );
   }
+ Widget _buildDataSourceBadge() {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      decoration: BoxDecoration(
+        color: lightGreen,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.satellite_alt, color: primaryGreen, size: 18),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Data Source',
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                    color: primaryGreen,
+                    letterSpacing: 1,
+                  ),
+                ),
+                Text(
+                  'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
+                  style: TextStyle(fontSize: 11, color: Colors.green[700]),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
