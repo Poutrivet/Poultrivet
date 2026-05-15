@@ -182,3 +182,22 @@ fontWeight: FontWeight.bold,
     );
   }
 
+ Widget _buildContent() {
+    return RefreshIndicator(
+      color: primaryGreen,
+      onRefresh: _loadData,
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.fromLTRB(20, 8, 20, 100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Disease Risk Statistics',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: darkText,
+              ),
+            ),
+   
