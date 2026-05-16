@@ -168,9 +168,9 @@ style: ElevatedButton.styleFrom(
 backgroundColor: primaryGreen,
 foregroundColor: Colors.white,
 padding:
-    const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
 shape: RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(30),
+borderRadius: BorderRadius.circular(30),
 ),
 ),
 onPressed: _loadData,
@@ -332,55 +332,55 @@ width: 160,
 child: PieChart(
 PieChartData(
 pieTouchData: PieTouchData(
-  touchCallback: (event, response) {
-    setState(() {
-      if (!event.isInterestedForInteractions ||
-          response == null ||
-          response.touchedSection == null) {
-        _touchedDonutIndex = -1;
-        return;
-      }
-      _touchedDonutIndex =
-          response.touchedSection!.touchedSectionIndex;
-    });
-  },
+touchCallback: (event, response) {
+setState(() {
+  if (!event.isInterestedForInteractions ||
+      response == null ||
+      response.touchedSection == null) {
+    _touchedDonutIndex = -1;
+    return;
+  }
+  _touchedDonutIndex =
+      response.touchedSection!.touchedSectionIndex;
+});
+},
 ),
 sectionsSpace: 3,
 centerSpaceRadius: 45,
 sections: [
-  PieChartSectionData(
-    value: _highRisk.toDouble(),
-    color: redRisk,
-    title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
-    radius: _touchedDonutIndex == 0 ? 55 : 48,
-    titleStyle: const TextStyle(
-      fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
-    ),
-  ),
-  PieChartSectionData(
-    value: _mediumRisk.toDouble(),
-    color: orangeRisk,
-    title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
-    radius: _touchedDonutIndex == 1 ? 55 : 48,
-    titleStyle: const TextStyle(
-      fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
-    ),
-  ),
-  PieChartSectionData(
-    value: _lowRisk.toDouble(),
-    color: primaryGreen,
-    title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
-    radius: _touchedDonutIndex == 2 ? 55 : 48,
-    titleStyle: const TextStyle(
-      fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
-    ),
-  ),
+PieChartSectionData(
+value: _highRisk.toDouble(),
+color: redRisk,
+title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
+radius: _touchedDonutIndex == 0 ? 55 : 48,
+titleStyle: const TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+),
+),
+PieChartSectionData(
+value: _mediumRisk.toDouble(),
+color: orangeRisk,
+title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
+radius: _touchedDonutIndex == 1 ? 55 : 48,
+titleStyle: const TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+),
+),
+PieChartSectionData(
+value: _lowRisk.toDouble(),
+color: primaryGreen,
+title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
+radius: _touchedDonutIndex == 2 ? 55 : 48,
+titleStyle: const TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+),
+),
 ],
 ),
 ),
@@ -460,8 +460,8 @@ final level = district['risk'] ?? district['risk_level'] ?? 'HIGH';
 final color = level == 'HIGH'
 ? redRisk
 : level == 'MEDIUM'
-  ? orangeRisk
-  : primaryGreen;
+? orangeRisk
+: primaryGreen;
 
 return Padding(
 padding: EdgeInsets.only(
@@ -470,52 +470,52 @@ child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
 Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-    Expanded(
-      child: Text(
-        '${index + 1}. $name',
-        style: const TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.w600,
-          color: darkText,
-        ),
-        overflow: TextOverflow.ellipsis,
-      ),
+mainAxisAlignment: MainAxisAlignment.spaceBetween,
+children: [
+Expanded(
+  child: Text(
+    '${index + 1}. $name',
+    style: const TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.w600,
+      color: darkText,
     ),
-    Container(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        '${score.toInt()}/10',
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.bold,
-          color: color,
-        ),
-      ),
+    overflow: TextOverflow.ellipsis,
+  ),
+),
+Container(
+  padding: const EdgeInsets.symmetric(
+      horizontal: 8, vertical: 3),
+  decoration: BoxDecoration(
+    color: color.withOpacity(0.12),
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text(
+    '${score.toInt()}/10',
+    style: TextStyle(
+      fontSize: 11,
+      fontWeight: FontWeight.bold,
+      color: color,
     ),
-  ],
+  ),
+),
+],
 ),
 const SizedBox(height: 6),
 ClipRRect(
-  borderRadius: BorderRadius.circular(6),
-  child: LinearProgressIndicator(
-    value: score / 10.0,
-    backgroundColor: color.withOpacity(0.12),
-    valueColor: AlwaysStoppedAnimation<Color>(color),
-    minHeight: 10,
-  ),
+borderRadius: BorderRadius.circular(6),
+child: LinearProgressIndicator(
+value: score / 10.0,
+backgroundColor: color.withOpacity(0.12),
+valueColor: AlwaysStoppedAnimation<Color>(color),
+minHeight: 10,
+),
 ),
 const SizedBox(height: 4),
 Text(
-  district['diseases'] ?? '',
-  style: const TextStyle(fontSize: 11, color: greyText),
-  overflow: TextOverflow.ellipsis,
+district['diseases'] ?? '',
+style: const TextStyle(fontSize: 11, color: greyText),
+overflow: TextOverflow.ellipsis,
 ),
 ],
 ),
@@ -566,37 +566,37 @@ EdgeInsets.only(bottom: index < sorted.length - 1 ? 16 : 0),
 child: Row(
 children: [
 SizedBox(
-  width: 110,
-  child: Text(
-    item.key,
-    style: const TextStyle(
-      fontSize: 12,
-      fontWeight: FontWeight.w500,
-      color: darkText,
-    ),
-    overflow: TextOverflow.ellipsis,
-  ),
+width: 110,
+child: Text(
+item.key,
+style: const TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.w500,
+  color: darkText,
+),
+overflow: TextOverflow.ellipsis,
+),
 ),
 const SizedBox(width: 10),
 Expanded(
-  child: ClipRRect(
-    borderRadius: BorderRadius.circular(6),
-    child: LinearProgressIndicator(
-      value: val / maxVal,
-      backgroundColor: color.withOpacity(0.1),
-      valueColor: AlwaysStoppedAnimation<Color>(color),
-      minHeight: 14,
-    ),
-  ),
+child: ClipRRect(
+borderRadius: BorderRadius.circular(6),
+child: LinearProgressIndicator(
+  value: val / maxVal,
+  backgroundColor: color.withOpacity(0.1),
+  valueColor: AlwaysStoppedAnimation<Color>(color),
+  minHeight: 14,
+),
+),
 ),
 const SizedBox(width: 10),
 Text(
-  '$val',
-  style: TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.bold,
-    color: color,
-  ),
+'$val',
+style: TextStyle(
+fontSize: 13,
+fontWeight: FontWeight.bold,
+color: color,
+),
 ),
 ],
 ),
@@ -622,17 +622,17 @@ child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
 const Text(
-  'Data Source',
-  style: TextStyle(
-    fontSize: 11,
-    fontWeight: FontWeight.bold,
-    color: primaryGreen,
-    letterSpacing: 1,
-  ),
+'Data Source',
+style: TextStyle(
+fontSize: 11,
+fontWeight: FontWeight.bold,
+color: primaryGreen,
+letterSpacing: 1,
+),
 ),
 Text(
-  'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
-  style: TextStyle(fontSize: 11, color: Colors.green[700]),
+'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
+style: TextStyle(fontSize: 11, color: Colors.green[700]),
 ),
 ],
 ),
