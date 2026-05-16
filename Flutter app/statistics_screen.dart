@@ -334,14 +334,14 @@ PieChartData(
 pieTouchData: PieTouchData(
 touchCallback: (event, response) {
 setState(() {
-  if (!event.isInterestedForInteractions ||
-      response == null ||
-      response.touchedSection == null) {
-    _touchedDonutIndex = -1;
-    return;
-  }
-  _touchedDonutIndex =
-      response.touchedSection!.touchedSectionIndex;
+if (!event.isInterestedForInteractions ||
+    response == null ||
+    response.touchedSection == null) {
+  _touchedDonutIndex = -1;
+  return;
+}
+_touchedDonutIndex =
+    response.touchedSection!.touchedSectionIndex;
 });
 },
 ),
@@ -354,9 +354,9 @@ color: redRisk,
 title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
 radius: _touchedDonutIndex == 0 ? 55 : 48,
 titleStyle: const TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.bold,
-  color: Colors.white,
+fontSize: 12,
+fontWeight: FontWeight.bold,
+color: Colors.white,
 ),
 ),
 PieChartSectionData(
@@ -365,9 +365,9 @@ color: orangeRisk,
 title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
 radius: _touchedDonutIndex == 1 ? 55 : 48,
 titleStyle: const TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.bold,
-  color: Colors.white,
+fontSize: 12,
+fontWeight: FontWeight.bold,
+color: Colors.white,
 ),
 ),
 PieChartSectionData(
@@ -376,9 +376,9 @@ color: primaryGreen,
 title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
 radius: _touchedDonutIndex == 2 ? 55 : 48,
 titleStyle: const TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.bold,
-  color: Colors.white,
+fontSize: 12,
+fontWeight: FontWeight.bold,
+color: Colors.white,
 ),
 ),
 ],
@@ -473,31 +473,31 @@ Row(
 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 children: [
 Expanded(
-  child: Text(
-    '${index + 1}. $name',
-    style: const TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w600,
-      color: darkText,
-    ),
-    overflow: TextOverflow.ellipsis,
+child: Text(
+  '${index + 1}. $name',
+  style: const TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    color: darkText,
   ),
+  overflow: TextOverflow.ellipsis,
+),
 ),
 Container(
-  padding: const EdgeInsets.symmetric(
-      horizontal: 8, vertical: 3),
-  decoration: BoxDecoration(
-    color: color.withOpacity(0.12),
-    borderRadius: BorderRadius.circular(8),
+padding: const EdgeInsets.symmetric(
+    horizontal: 8, vertical: 3),
+decoration: BoxDecoration(
+  color: color.withOpacity(0.12),
+  borderRadius: BorderRadius.circular(8),
+),
+child: Text(
+  '${score.toInt()}/10',
+  style: TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.bold,
+    color: color,
   ),
-  child: Text(
-    '${score.toInt()}/10',
-    style: TextStyle(
-      fontSize: 11,
-      fontWeight: FontWeight.bold,
-      color: color,
-    ),
-  ),
+),
 ),
 ],
 ),
@@ -570,9 +570,9 @@ width: 110,
 child: Text(
 item.key,
 style: const TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.w500,
-  color: darkText,
+fontSize: 12,
+fontWeight: FontWeight.w500,
+color: darkText,
 ),
 overflow: TextOverflow.ellipsis,
 ),
@@ -582,10 +582,10 @@ Expanded(
 child: ClipRRect(
 borderRadius: BorderRadius.circular(6),
 child: LinearProgressIndicator(
-  value: val / maxVal,
-  backgroundColor: color.withOpacity(0.1),
-  valueColor: AlwaysStoppedAnimation<Color>(color),
-  minHeight: 14,
+value: val / maxVal,
+backgroundColor: color.withOpacity(0.1),
+valueColor: AlwaysStoppedAnimation<Color>(color),
+minHeight: 14,
 ),
 ),
 ),
