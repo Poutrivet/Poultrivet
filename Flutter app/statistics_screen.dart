@@ -335,13 +335,13 @@ pieTouchData: PieTouchData(
 touchCallback: (event, response) {
 setState(() {
 if (!event.isInterestedForInteractions ||
-    response == null ||
-    response.touchedSection == null) {
-  _touchedDonutIndex = -1;
-  return;
+response == null ||
+response.touchedSection == null) {
+_touchedDonutIndex = -1;
+return;
 }
 _touchedDonutIndex =
-    response.touchedSection!.touchedSectionIndex;
+response.touchedSection!.touchedSectionIndex;
 });
 },
 ),
@@ -474,29 +474,29 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
 children: [
 Expanded(
 child: Text(
-  '${index + 1}. $name',
-  style: const TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.w600,
-    color: darkText,
-  ),
-  overflow: TextOverflow.ellipsis,
+'${index + 1}. $name',
+style: const TextStyle(
+fontSize: 13,
+fontWeight: FontWeight.w600,
+color: darkText,
+),
+overflow: TextOverflow.ellipsis,
 ),
 ),
 Container(
 padding: const EdgeInsets.symmetric(
-    horizontal: 8, vertical: 3),
+horizontal: 8, vertical: 3),
 decoration: BoxDecoration(
-  color: color.withOpacity(0.12),
-  borderRadius: BorderRadius.circular(8),
+color: color.withOpacity(0.12),
+borderRadius: BorderRadius.circular(8),
 ),
 child: Text(
-  '${score.toInt()}/10',
-  style: TextStyle(
-    fontSize: 11,
-    fontWeight: FontWeight.bold,
-    color: color,
-  ),
+'${score.toInt()}/10',
+style: TextStyle(
+fontSize: 11,
+fontWeight: FontWeight.bold,
+color: color,
+),
 ),
 ),
 ],
