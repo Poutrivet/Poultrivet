@@ -119,8 +119,8 @@ fontWeight: FontWeight.bold,
 body: _isLoading
 ? _buildLoading()
 : _error != null
-    ? _buildError()
-    : _buildContent(),
+? _buildError()
+: _buildContent(),
 );
 }
 
@@ -132,8 +132,8 @@ children: [
 const CircularProgressIndicator(color: primaryGreen),
 const SizedBox(height: 20),
 Text(
-  'Loading satellite data...',
-  style: TextStyle(color: greyText, fontSize: 14),
+'Loading satellite data...',
+style: TextStyle(color: greyText, fontSize: 14),
 ),
 ],
 ),
@@ -147,35 +147,35 @@ padding: const EdgeInsets.all(32),
 child: Column(
 mainAxisAlignment: MainAxisAlignment.center,
 children: [
-  const Icon(Icons.wifi_off, size: 64, color: Colors.grey),
-  const SizedBox(height: 16),
-  const Text(
-    'Could not load data',
-    style: TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
-      color: darkText,
-    ),
+const Icon(Icons.wifi_off, size: 64, color: Colors.grey),
+const SizedBox(height: 16),
+const Text(
+'Could not load data',
+style: TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+  color: darkText,
+),
+),
+const SizedBox(height: 8),
+Text(
+'Check your internet connection',
+style: TextStyle(color: greyText, fontSize: 14),
+),
+const SizedBox(height: 24),
+ElevatedButton(
+style: ElevatedButton.styleFrom(
+  backgroundColor: primaryGreen,
+  foregroundColor: Colors.white,
+  padding:
+      const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
   ),
-  const SizedBox(height: 8),
-  Text(
-    'Check your internet connection',
-    style: TextStyle(color: greyText, fontSize: 14),
-  ),
-  const SizedBox(height: 24),
-  ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: primaryGreen,
-      foregroundColor: Colors.white,
-      padding:
-          const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
-      ),
-    ),
-    onPressed: _loadData,
-    child: const Text('Try Again'),
-  ),
+),
+onPressed: _loadData,
+child: const Text('Try Again'),
+),
 ],
 ),
 ),
@@ -192,37 +192,37 @@ padding: const EdgeInsets.fromLTRB(20, 8, 20, 100),
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
-  const Text(
-    'Disease Risk Statistics',
-    style: TextStyle(
-      fontSize: 22,
-      fontWeight: FontWeight.bold,
-      color: darkText,
-    ),
-  ),
+const Text(
+'Disease Risk Statistics',
+style: TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.bold,
+  color: darkText,
+),
+),
 const SizedBox(height: 4),
-  Text(
-    'Powered by Sentinel-2 & MODIS satellite data',
-    style: TextStyle(fontSize: 13, color: greyText),
-  ),
-  const SizedBox(height: 20),
-  _buildSummaryCards(),
-  const SizedBox(height: 24),
-  _buildSectionTitle(
-      '🌍 National Risk Distribution', '$_totalDistricts districts'),
-  const SizedBox(height: 12),
-  _buildDonutChart(),
-  const SizedBox(height: 24),
-  _buildSectionTitle('⚠️ Top 5 Highest Risk Districts', 'This week'),
-  const SizedBox(height: 12),
-  _buildTop5Chart(),
-  const SizedBox(height: 24),
-  _buildSectionTitle(
-      '🦠 Disease Frequency Across Uganda', 'Districts flagged'),
-  const SizedBox(height: 12),
-  _buildDiseaseChart(),
-  const SizedBox(height: 16),
-  _buildDataSourceBadge(),
+Text(
+'Powered by Sentinel-2 & MODIS satellite data',
+style: TextStyle(fontSize: 13, color: greyText),
+),
+const SizedBox(height: 20),
+_buildSummaryCards(),
+const SizedBox(height: 24),
+_buildSectionTitle(
+  '🌍 National Risk Distribution', '$_totalDistricts districts'),
+const SizedBox(height: 12),
+_buildDonutChart(),
+const SizedBox(height: 24),
+_buildSectionTitle('⚠️ Top 5 Highest Risk Districts', 'This week'),
+const SizedBox(height: 12),
+_buildTop5Chart(),
+const SizedBox(height: 24),
+_buildSectionTitle(
+  '🦠 Disease Frequency Across Uganda', 'Districts flagged'),
+const SizedBox(height: 12),
+_buildDiseaseChart(),
+const SizedBox(height: 16),
+_buildDataSourceBadge(),
 ],
 ),
 ),
@@ -233,13 +233,13 @@ Widget _buildSummaryCards() {
 return Row(
 children: [
 _summaryCard(
-  'HIGH', _highRisk.toString(), redRisk, Icons.warning_amber_rounded),
+'HIGH', _highRisk.toString(), redRisk, Icons.warning_amber_rounded),
 const SizedBox(width: 10),
 _summaryCard(
-  'MEDIUM', _mediumRisk.toString(), orangeRisk, Icons.info_outline),
+'MEDIUM', _mediumRisk.toString(), orangeRisk, Icons.info_outline),
 const SizedBox(width: 10),
 _summaryCard('LOW', _lowRisk.toString(), primaryGreen,
-  Icons.check_circle_outline),
+Icons.check_circle_outline),
 ],
 );
 }
@@ -252,35 +252,35 @@ decoration: BoxDecoration(
 color: cardColor,
 borderRadius: BorderRadius.circular(16),
 boxShadow: [
-  BoxShadow(
-    color: Colors.black.withOpacity(0.06),
-    blurRadius: 10,
-    offset: const Offset(0, 4),
-  ),
+BoxShadow(
+color: Colors.black.withOpacity(0.06),
+blurRadius: 10,
+offset: const Offset(0, 4),
+),
 ],
 ),
 child: Column(
 children: [
-  Icon(icon, color: color, size: 24),
-  const SizedBox(height: 8),
-  Text(
-    value,
-    style: TextStyle(
-      fontSize: 28,
-      fontWeight: FontWeight.bold,
-      color: color,
-    ),
-  ),
-  const SizedBox(height: 4),
-  Text(
-    label,
-    style: const TextStyle(
-      fontSize: 10,
-      fontWeight: FontWeight.w600,
-      color: greyText,
-      letterSpacing: 1,
-    ),
-  ),
+Icon(icon, color: color, size: 24),
+const SizedBox(height: 8),
+Text(
+value,
+style: TextStyle(
+  fontSize: 28,
+  fontWeight: FontWeight.bold,
+  color: color,
+),
+),
+const SizedBox(height: 4),
+Text(
+label,
+style: const TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.w600,
+  color: greyText,
+  letterSpacing: 1,
+),
+),
 ],
 ),
 ),
@@ -294,9 +294,9 @@ children: [
 Text(
 title,
 style: const TextStyle(
-  fontSize: 15,
-  fontWeight: FontWeight.bold,
-  color: darkText,
+fontSize: 15,
+fontWeight: FontWeight.bold,
+color: darkText,
 ),
 ),
 Text(
@@ -318,86 +318,86 @@ color: cardColor,
 borderRadius: BorderRadius.circular(20),
 boxShadow: [
 BoxShadow(
-  color: Colors.black.withOpacity(0.06),
-  blurRadius: 10,
-  offset: const Offset(0, 4),
+color: Colors.black.withOpacity(0.06),
+blurRadius: 10,
+offset: const Offset(0, 4),
 ),
 ],
 ),
 child: Row(
 children: [
 SizedBox(
-  height: 160,
-  width: 160,
-  child: PieChart(
-    PieChartData(
-      pieTouchData: PieTouchData(
-        touchCallback: (event, response) {
-          setState(() {
-            if (!event.isInterestedForInteractions ||
-                response == null ||
-                response.touchedSection == null) {
-              _touchedDonutIndex = -1;
-              return;
-            }
-            _touchedDonutIndex =
-                response.touchedSection!.touchedSectionIndex;
-          });
-        },
-      ),
-      sectionsSpace: 3,
-      centerSpaceRadius: 45,
-      sections: [
-        PieChartSectionData(
-          value: _highRisk.toDouble(),
-          color: redRisk,
-          title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
-          radius: _touchedDonutIndex == 0 ? 55 : 48,
-          titleStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        PieChartSectionData(
-          value: _mediumRisk.toDouble(),
-          color: orangeRisk,
-          title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
-          radius: _touchedDonutIndex == 1 ? 55 : 48,
-          titleStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        PieChartSectionData(
-          value: _lowRisk.toDouble(),
-          color: primaryGreen,
-          title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
-          radius: _touchedDonutIndex == 2 ? 55 : 48,
-          titleStyle: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ],
-    ),
+height: 160,
+width: 160,
+child: PieChart(
+PieChartData(
+  pieTouchData: PieTouchData(
+    touchCallback: (event, response) {
+      setState(() {
+        if (!event.isInterestedForInteractions ||
+            response == null ||
+            response.touchedSection == null) {
+          _touchedDonutIndex = -1;
+          return;
+        }
+        _touchedDonutIndex =
+            response.touchedSection!.touchedSectionIndex;
+      });
+    },
   ),
+  sectionsSpace: 3,
+  centerSpaceRadius: 45,
+  sections: [
+    PieChartSectionData(
+      value: _highRisk.toDouble(),
+      color: redRisk,
+      title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
+      radius: _touchedDonutIndex == 0 ? 55 : 48,
+      titleStyle: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+    ),
+    PieChartSectionData(
+      value: _mediumRisk.toDouble(),
+      color: orangeRisk,
+      title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
+      radius: _touchedDonutIndex == 1 ? 55 : 48,
+      titleStyle: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+    ),
+    PieChartSectionData(
+      value: _lowRisk.toDouble(),
+      color: primaryGreen,
+      title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
+      radius: _touchedDonutIndex == 2 ? 55 : 48,
+      titleStyle: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+    ),
+  ],
+),
+),
 ),
 const SizedBox(width: 24),
 Expanded(
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      _donutLegendItem('HIGH Risk', _highRisk, redRisk),
-      const SizedBox(height: 16),
-      _donutLegendItem('MEDIUM Risk', _mediumRisk, orangeRisk),
-      const SizedBox(height: 16),
-      _donutLegendItem('LOW Risk', _lowRisk, primaryGreen),
-    ],
-  ),
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+mainAxisAlignment: MainAxisAlignment.center,
+children: [
+  _donutLegendItem('HIGH Risk', _highRisk, redRisk),
+  const SizedBox(height: 16),
+  _donutLegendItem('MEDIUM Risk', _mediumRisk, orangeRisk),
+  const SizedBox(height: 16),
+  _donutLegendItem('LOW Risk', _lowRisk, primaryGreen),
+],
+),
 ),
 ],
 ),
@@ -411,23 +411,23 @@ Container(
 width: 12,
 height: 12,
 decoration: BoxDecoration(
-  color: color,
-  borderRadius: BorderRadius.circular(3),
+color: color,
+borderRadius: BorderRadius.circular(3),
 ),
 ),
 const SizedBox(width: 8),
 Expanded(
 child: Text(
-  label,
-  style: const TextStyle(fontSize: 12, color: greyText),
+label,
+style: const TextStyle(fontSize: 12, color: greyText),
 ),
 ),
 Text(
 value.toString(),
 style: TextStyle(
-  fontSize: 14,
-  fontWeight: FontWeight.bold,
-  color: color,
+fontSize: 14,
+fontWeight: FontWeight.bold,
+color: color,
 ),
 ),
 ],
@@ -444,9 +444,9 @@ color: cardColor,
 borderRadius: BorderRadius.circular(20),
 boxShadow: [
 BoxShadow(
-  color: Colors.black.withOpacity(0.06),
-  blurRadius: 10,
-  offset: const Offset(0, 4),
+color: Colors.black.withOpacity(0.06),
+blurRadius: 10,
+offset: const Offset(0, 4),
 ),
 ],
 ),
@@ -458,67 +458,67 @@ final name = district['district'] ?? '';
 final score = (district['risk_score'] ?? 0).toDouble();
 final level = district['risk'] ?? district['risk_level'] ?? 'HIGH';
 final color = level == 'HIGH'
-    ? redRisk
-    : level == 'MEDIUM'
-        ? orangeRisk
-        : primaryGreen;
+? redRisk
+: level == 'MEDIUM'
+    ? orangeRisk
+    : primaryGreen;
 
 return Padding(
-  padding: EdgeInsets.only(
-      bottom: index < _top5Districts.length - 1 ? 16 : 0),
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+padding: EdgeInsets.only(
+  bottom: index < _top5Districts.length - 1 ? 16 : 0),
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+  Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            child: Text(
-              '${index + 1}. $name',
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                color: darkText,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
+      Expanded(
+        child: Text(
+          '${index + 1}. $name',
+          style: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: darkText,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 8, vertical: 3),
-            decoration: BoxDecoration(
-              color: color.withOpacity(0.12),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(
-              '${score.toInt()}/10',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
-            ),
-          ),
-        ],
-      ),
-      const SizedBox(height: 6),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(6),
-        child: LinearProgressIndicator(
-          value: score / 10.0,
-          backgroundColor: color.withOpacity(0.12),
-          valueColor: AlwaysStoppedAnimation<Color>(color),
-          minHeight: 10,
+          overflow: TextOverflow.ellipsis,
         ),
       ),
-      const SizedBox(height: 4),
-      Text(
-        district['diseases'] ?? '',
-        style: const TextStyle(fontSize: 11, color: greyText),
-        overflow: TextOverflow.ellipsis,
+      Container(
+        padding: const EdgeInsets.symmetric(
+            horizontal: 8, vertical: 3),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.12),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text(
+          '${score.toInt()}/10',
+          style: TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
+        ),
       ),
     ],
   ),
+  const SizedBox(height: 6),
+  ClipRRect(
+    borderRadius: BorderRadius.circular(6),
+    child: LinearProgressIndicator(
+      value: score / 10.0,
+      backgroundColor: color.withOpacity(0.12),
+      valueColor: AlwaysStoppedAnimation<Color>(color),
+      minHeight: 10,
+    ),
+  ),
+  const SizedBox(height: 4),
+  Text(
+    district['diseases'] ?? '',
+    style: const TextStyle(fontSize: 11, color: greyText),
+    overflow: TextOverflow.ellipsis,
+  ),
+],
+),
 );
 }).toList(),
 ),
@@ -546,9 +546,9 @@ color: cardColor,
 borderRadius: BorderRadius.circular(20),
 boxShadow: [
 BoxShadow(
-  color: Colors.black.withOpacity(0.06),
-  blurRadius: 10,
-  offset: const Offset(0, 4),
+color: Colors.black.withOpacity(0.06),
+blurRadius: 10,
+offset: const Offset(0, 4),
 ),
 ],
 ),
@@ -561,45 +561,45 @@ final maxVal = sorted.first.value as int;
 final val = item.value as int;
 
 return Padding(
-  padding:
-      EdgeInsets.only(bottom: index < sorted.length - 1 ? 16 : 0),
-  child: Row(
-    children: [
-      SizedBox(
-        width: 110,
-        child: Text(
-          item.key,
-          style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-            color: darkText,
-          ),
-          overflow: TextOverflow.ellipsis,
-        ),
+padding:
+  EdgeInsets.only(bottom: index < sorted.length - 1 ? 16 : 0),
+child: Row(
+children: [
+  SizedBox(
+    width: 110,
+    child: Text(
+      item.key,
+      style: const TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: darkText,
       ),
-      const SizedBox(width: 10),
-      Expanded(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: LinearProgressIndicator(
-            value: val / maxVal,
-            backgroundColor: color.withOpacity(0.1),
-            valueColor: AlwaysStoppedAnimation<Color>(color),
-            minHeight: 14,
-          ),
-        ),
-      ),
-      const SizedBox(width: 10),
-      Text(
-        '$val',
-        style: TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.bold,
-          color: color,
-        ),
-      ),
-    ],
+      overflow: TextOverflow.ellipsis,
+    ),
   ),
+  const SizedBox(width: 10),
+  Expanded(
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(6),
+      child: LinearProgressIndicator(
+        value: val / maxVal,
+        backgroundColor: color.withOpacity(0.1),
+        valueColor: AlwaysStoppedAnimation<Color>(color),
+        minHeight: 14,
+      ),
+    ),
+  ),
+  const SizedBox(width: 10),
+  Text(
+    '$val',
+    style: TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.bold,
+      color: color,
+    ),
+  ),
+],
+),
 );
 }).toList(),
 ),
@@ -618,24 +618,24 @@ children: [
 const Icon(Icons.satellite_alt, color: primaryGreen, size: 18),
 const SizedBox(width: 10),
 Expanded(
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      const Text(
-        'Data Source',
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.bold,
-          color: primaryGreen,
-          letterSpacing: 1,
-        ),
-      ),
-      Text(
-        'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
-        style: TextStyle(fontSize: 11, color: Colors.green[700]),
-      ),
-    ],
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+  const Text(
+    'Data Source',
+    style: TextStyle(
+      fontSize: 11,
+      fontWeight: FontWeight.bold,
+      color: primaryGreen,
+      letterSpacing: 1,
+    ),
   ),
+  Text(
+    'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
+    style: TextStyle(fontSize: 11, color: Colors.green[700]),
+  ),
+],
+),
 ),
 ],
 ),
