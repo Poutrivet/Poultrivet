@@ -152,9 +152,9 @@ const SizedBox(height: 16),
 const Text(
 'Could not load data',
 style: TextStyle(
-  fontSize: 18,
-  fontWeight: FontWeight.bold,
-  color: darkText,
+fontSize: 18,
+fontWeight: FontWeight.bold,
+color: darkText,
 ),
 ),
 const SizedBox(height: 8),
@@ -165,13 +165,13 @@ style: TextStyle(color: greyText, fontSize: 14),
 const SizedBox(height: 24),
 ElevatedButton(
 style: ElevatedButton.styleFrom(
-  backgroundColor: primaryGreen,
-  foregroundColor: Colors.white,
-  padding:
-      const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(30),
-  ),
+backgroundColor: primaryGreen,
+foregroundColor: Colors.white,
+padding:
+    const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+shape: RoundedRectangleBorder(
+  borderRadius: BorderRadius.circular(30),
+),
 ),
 onPressed: _loadData,
 child: const Text('Try Again'),
@@ -195,9 +195,9 @@ children: [
 const Text(
 'Disease Risk Statistics',
 style: TextStyle(
-  fontSize: 22,
-  fontWeight: FontWeight.bold,
-  color: darkText,
+fontSize: 22,
+fontWeight: FontWeight.bold,
+color: darkText,
 ),
 ),
 const SizedBox(height: 4),
@@ -209,7 +209,7 @@ const SizedBox(height: 20),
 _buildSummaryCards(),
 const SizedBox(height: 24),
 _buildSectionTitle(
-  '🌍 National Risk Distribution', '$_totalDistricts districts'),
+'🌍 National Risk Distribution', '$_totalDistricts districts'),
 const SizedBox(height: 12),
 _buildDonutChart(),
 const SizedBox(height: 24),
@@ -218,7 +218,7 @@ const SizedBox(height: 12),
 _buildTop5Chart(),
 const SizedBox(height: 24),
 _buildSectionTitle(
-  '🦠 Disease Frequency Across Uganda', 'Districts flagged'),
+'🦠 Disease Frequency Across Uganda', 'Districts flagged'),
 const SizedBox(height: 12),
 _buildDiseaseChart(),
 const SizedBox(height: 16),
@@ -266,19 +266,19 @@ const SizedBox(height: 8),
 Text(
 value,
 style: TextStyle(
-  fontSize: 28,
-  fontWeight: FontWeight.bold,
-  color: color,
+fontSize: 28,
+fontWeight: FontWeight.bold,
+color: color,
 ),
 ),
 const SizedBox(height: 4),
 Text(
 label,
 style: const TextStyle(
-  fontSize: 10,
-  fontWeight: FontWeight.w600,
-  color: greyText,
-  letterSpacing: 1,
+fontSize: 10,
+fontWeight: FontWeight.w600,
+color: greyText,
+letterSpacing: 1,
 ),
 ),
 ],
@@ -331,57 +331,57 @@ height: 160,
 width: 160,
 child: PieChart(
 PieChartData(
-  pieTouchData: PieTouchData(
-    touchCallback: (event, response) {
-      setState(() {
-        if (!event.isInterestedForInteractions ||
-            response == null ||
-            response.touchedSection == null) {
-          _touchedDonutIndex = -1;
-          return;
-        }
-        _touchedDonutIndex =
-            response.touchedSection!.touchedSectionIndex;
-      });
-    },
+pieTouchData: PieTouchData(
+  touchCallback: (event, response) {
+    setState(() {
+      if (!event.isInterestedForInteractions ||
+          response == null ||
+          response.touchedSection == null) {
+        _touchedDonutIndex = -1;
+        return;
+      }
+      _touchedDonutIndex =
+          response.touchedSection!.touchedSectionIndex;
+    });
+  },
+),
+sectionsSpace: 3,
+centerSpaceRadius: 45,
+sections: [
+  PieChartSectionData(
+    value: _highRisk.toDouble(),
+    color: redRisk,
+    title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
+    radius: _touchedDonutIndex == 0 ? 55 : 48,
+    titleStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
   ),
-  sectionsSpace: 3,
-  centerSpaceRadius: 45,
-  sections: [
-    PieChartSectionData(
-      value: _highRisk.toDouble(),
-      color: redRisk,
-      title: '${(_highRisk / total * 100).toStringAsFixed(0)}%',
-      radius: _touchedDonutIndex == 0 ? 55 : 48,
-      titleStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
+  PieChartSectionData(
+    value: _mediumRisk.toDouble(),
+    color: orangeRisk,
+    title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
+    radius: _touchedDonutIndex == 1 ? 55 : 48,
+    titleStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
     ),
-    PieChartSectionData(
-      value: _mediumRisk.toDouble(),
-      color: orangeRisk,
-      title: '${(_mediumRisk / total * 100).toStringAsFixed(0)}%',
-      radius: _touchedDonutIndex == 1 ? 55 : 48,
-      titleStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
+  ),
+  PieChartSectionData(
+    value: _lowRisk.toDouble(),
+    color: primaryGreen,
+    title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
+    radius: _touchedDonutIndex == 2 ? 55 : 48,
+    titleStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
     ),
-    PieChartSectionData(
-      value: _lowRisk.toDouble(),
-      color: primaryGreen,
-      title: '${(_lowRisk / total * 100).toStringAsFixed(0)}%',
-      radius: _touchedDonutIndex == 2 ? 55 : 48,
-      titleStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
-    ),
-  ],
+  ),
+],
 ),
 ),
 ),
@@ -391,11 +391,11 @@ child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 mainAxisAlignment: MainAxisAlignment.center,
 children: [
-  _donutLegendItem('HIGH Risk', _highRisk, redRisk),
-  const SizedBox(height: 16),
-  _donutLegendItem('MEDIUM Risk', _mediumRisk, orangeRisk),
-  const SizedBox(height: 16),
-  _donutLegendItem('LOW Risk', _lowRisk, primaryGreen),
+_donutLegendItem('HIGH Risk', _highRisk, redRisk),
+const SizedBox(height: 16),
+_donutLegendItem('MEDIUM Risk', _mediumRisk, orangeRisk),
+const SizedBox(height: 16),
+_donutLegendItem('LOW Risk', _lowRisk, primaryGreen),
 ],
 ),
 ),
@@ -460,63 +460,63 @@ final level = district['risk'] ?? district['risk_level'] ?? 'HIGH';
 final color = level == 'HIGH'
 ? redRisk
 : level == 'MEDIUM'
-    ? orangeRisk
-    : primaryGreen;
+  ? orangeRisk
+  : primaryGreen;
 
 return Padding(
 padding: EdgeInsets.only(
-  bottom: index < _top5Districts.length - 1 ? 16 : 0),
+bottom: index < _top5Districts.length - 1 ? 16 : 0),
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
-  Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Expanded(
-        child: Text(
-          '${index + 1}. $name',
-          style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
-            color: darkText,
-          ),
-          overflow: TextOverflow.ellipsis,
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    Expanded(
+      child: Text(
+        '${index + 1}. $name',
+        style: const TextStyle(
+          fontSize: 13,
+          fontWeight: FontWeight.w600,
+          color: darkText,
         ),
+        overflow: TextOverflow.ellipsis,
       ),
-      Container(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 8, vertical: 3),
-        decoration: BoxDecoration(
-          color: color.withOpacity(0.12),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Text(
-          '${score.toInt()}/10',
-          style: TextStyle(
-            fontSize: 11,
-            fontWeight: FontWeight.bold,
-            color: color,
-          ),
-        ),
-      ),
-    ],
-  ),
-  const SizedBox(height: 6),
-  ClipRRect(
-    borderRadius: BorderRadius.circular(6),
-    child: LinearProgressIndicator(
-      value: score / 10.0,
-      backgroundColor: color.withOpacity(0.12),
-      valueColor: AlwaysStoppedAnimation<Color>(color),
-      minHeight: 10,
     ),
+    Container(
+      padding: const EdgeInsets.symmetric(
+          horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.12),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Text(
+        '${score.toInt()}/10',
+        style: TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.bold,
+          color: color,
+        ),
+      ),
+    ),
+  ],
+),
+const SizedBox(height: 6),
+ClipRRect(
+  borderRadius: BorderRadius.circular(6),
+  child: LinearProgressIndicator(
+    value: score / 10.0,
+    backgroundColor: color.withOpacity(0.12),
+    valueColor: AlwaysStoppedAnimation<Color>(color),
+    minHeight: 10,
   ),
-  const SizedBox(height: 4),
-  Text(
-    district['diseases'] ?? '',
-    style: const TextStyle(fontSize: 11, color: greyText),
-    overflow: TextOverflow.ellipsis,
-  ),
+),
+const SizedBox(height: 4),
+Text(
+  district['diseases'] ?? '',
+  style: const TextStyle(fontSize: 11, color: greyText),
+  overflow: TextOverflow.ellipsis,
+),
 ],
 ),
 );
@@ -562,42 +562,42 @@ final val = item.value as int;
 
 return Padding(
 padding:
-  EdgeInsets.only(bottom: index < sorted.length - 1 ? 16 : 0),
+EdgeInsets.only(bottom: index < sorted.length - 1 ? 16 : 0),
 child: Row(
 children: [
-  SizedBox(
-    width: 110,
-    child: Text(
-      item.key,
-      style: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w500,
-        color: darkText,
-      ),
-      overflow: TextOverflow.ellipsis,
+SizedBox(
+  width: 110,
+  child: Text(
+    item.key,
+    style: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+      color: darkText,
+    ),
+    overflow: TextOverflow.ellipsis,
+  ),
+),
+const SizedBox(width: 10),
+Expanded(
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(6),
+    child: LinearProgressIndicator(
+      value: val / maxVal,
+      backgroundColor: color.withOpacity(0.1),
+      valueColor: AlwaysStoppedAnimation<Color>(color),
+      minHeight: 14,
     ),
   ),
-  const SizedBox(width: 10),
-  Expanded(
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(6),
-      child: LinearProgressIndicator(
-        value: val / maxVal,
-        backgroundColor: color.withOpacity(0.1),
-        valueColor: AlwaysStoppedAnimation<Color>(color),
-        minHeight: 14,
-      ),
-    ),
+),
+const SizedBox(width: 10),
+Text(
+  '$val',
+  style: TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: color,
   ),
-  const SizedBox(width: 10),
-  Text(
-    '$val',
-    style: TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.bold,
-      color: color,
-    ),
-  ),
+),
 ],
 ),
 );
@@ -621,19 +621,19 @@ Expanded(
 child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
-  const Text(
-    'Data Source',
-    style: TextStyle(
-      fontSize: 11,
-      fontWeight: FontWeight.bold,
-      color: primaryGreen,
-      letterSpacing: 1,
-    ),
+const Text(
+  'Data Source',
+  style: TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.bold,
+    color: primaryGreen,
+    letterSpacing: 1,
   ),
-  Text(
-    'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
-    style: TextStyle(fontSize: 11, color: Colors.green[700]),
-  ),
+),
+Text(
+  'Sentinel-2 · MODIS NASA · JRC Water Data · Last updated Feb 2025',
+  style: TextStyle(fontSize: 11, color: Colors.green[700]),
+),
 ],
 ),
 ),
