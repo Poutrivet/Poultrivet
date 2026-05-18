@@ -149,3 +149,66 @@ Future<void> _searchDistrict(String name) async {
         ],
       ),
   
+ body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(20, 8, 20, 100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'District Risk Lookup',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: darkText,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Search any Uganda district for satellite risk data',
+              style: TextStyle(fontSize: 13, color: greyText),
+            ),
+            const SizedBox(height: 20),
+
+            // Search bar
+            Container(
+              decoration: BoxDecoration(
+                color: cardColor,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.06),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: TextField(
+                controller: _searchController,
+                onSubmitted: _searchDistrict,
+                textCapitalization: TextCapitalization.words,
+                style: const TextStyle(
+                  fontSize: 15,
+                  color: darkText,
+                  fontWeight: FontWeight.w500,
+                ),
+                decoration: InputDecoration(
+                  hintText: 'Type district name e.g. Kampala',
+                  hintStyle: TextStyle(
+                    color: greyText,
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
+                  prefixIcon: const Icon(Icons.search, color: primaryGreen),
+                  suffixIcon: _searchController.text.isNotEmpty
+                      ? IconButton(
+                          icon: Icon(Icons.close, color: greyText),
+                          onPressed: () {
+                            _searchController.clear();
+                            setState(() {
+                              _hasSearched = false;
+                              _districtData = null;
+                              _error = null;
+                            });
+                          },
+                        )
+     
