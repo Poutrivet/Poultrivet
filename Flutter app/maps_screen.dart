@@ -44,4 +44,108 @@ class _MapsScreenState extends State<MapsScreen> {
     _searchController.dispose();
     super.dispose();
   }
+Future<void> _searchDistrict(String name) async {
+    if (name.trim().isEmpty) return;
+    FocusScope.of(context).unfocus();
+    setState(() {
+      _isLoading = true;
+      _hasSearched = true;
+      _error = null;
+      _districtData = null;
+    });
+    try {
+      final data = await ApiService.getDistrict(name.trim());
+      setState(() {
+        _districtData = data;
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _error = e.toString().contains('not found')
+            ? 'District "$name" not found.\nCheck spelling and try again.'
+            : 'Connection error. Check your internet.';
+        _isLoading = false;
+      });
+    }
+  }
 
+  Color _getRiskColor(String? level) {
+    switch (level?.toUpperCase()) {
+      case 'HIGH':
+        return redRisk;
+      case 'MEDIUM':
+        return orangeRisk;
+      case 'LOW':
+        return primaryGreen;
+      default:
+        return greyText;
+    }
+  }
+
+  IconData _getRiskIcon(String? level) {
+    switch (level?.toUpperCase()) {
+      case 'HIGH':
+        return Icons.warning_amber_rounded;
+      case 'MEDIUM':
+        return Icons.info_outline;
+      case 'LOW':
+        return Icons.check_circle_outline;
+      default:
+        return Icons.help_outline;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        backgroundColor: bgColor,
+        elevation: 0,
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.menu, color: darkText),
+          onPressed: () {},
+        ),
+        title: const Text(
+          'PoulVet',
+          style: TextStyle(
+            color: primaryGreen,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
+        actions: [
+          Stack(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.notifications_outlined, color: darkText),
+                onPressed: () {},
+              ),
+              Positioned(
+                right: 8,
+                top: 8,
+                child: Container(
+                  width: 16,
+                  height: 16,
+                  decoration: const BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      '3',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 9,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+  
