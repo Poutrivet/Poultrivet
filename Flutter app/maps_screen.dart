@@ -342,4 +342,30 @@ const SizedBox(height: 24),
                       ),
                     ),
                   ),
+
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: riskColor.withOpacity(0.12),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(_getRiskIcon(riskLevel),
+                            color: riskColor, size: 16),
+                        const SizedBox(width: 6),
+                        Text(
+                          riskLevel,
+                          style: TextStyle(
+                            color: riskColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
           
