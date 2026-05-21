@@ -264,3 +264,33 @@ child: ElevatedButton(
 ),
 ),
 const SizedBox(height: 24),
+
+  // Result
+            if (_hasSearched && !_isLoading) ...[
+              if (_error != null)
+                _buildErrorCard()
+              else if (_districtData != null)
+                _buildResultCard(),
+              const SizedBox(height: 24),
+            ],
+
+            // Quick search
+            if (!_hasSearched || _districtData == null) ...[
+              const Text(
+                'Quick Search',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: darkText,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                'Tap a district to check its risk level',
+                style: TextStyle(fontSize: 13, color: greyText),
+              ),
+              const SizedBox(height: 12),
+              _buildQuickSearch(),
+              const SizedBox(height: 24),
+            ],
+
