@@ -293,4 +293,53 @@ const SizedBox(height: 24),
               _buildQuickSearch(),
               const SizedBox(height: 24),
             ],
+  _buildInfoCard(),
+          ],
+        ),
+      ),
+    );
+  }
 
+  Widget _buildResultCard() {
+    final district = _districtData!;
+    final riskLevel = district['risk_level'] ?? 'UNKNOWN';
+    final riskColor = _getRiskColor(riskLevel);
+    final env = district['environmental_conditions'] ?? {};
+
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: cardColor,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.06),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+            border: Border.all(
+              color: riskColor.withOpacity(0.3),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      district['district'] ?? '',
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: darkText,
+                      ),
+                    ),
+                  ),
+          
