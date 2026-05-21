@@ -368,4 +368,64 @@ const SizedBox(height: 24),
                   ),
                 ],
               ),
-          
+          const SizedBox(height: 6),
+              Text('District · Uganda',
+                  style: TextStyle(fontSize: 13, color: greyText)),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Text('Risk Score: ',
+                      style: TextStyle(fontSize: 13, color: greyText)),
+                  Text(
+                    '${district['risk_score'] ?? 0}/10',
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: riskColor,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: LinearProgressIndicator(
+                  value: ((district['risk_score'] ?? 0) as num) / 10,
+                  backgroundColor: riskColor.withOpacity(0.12),
+                  valueColor: AlwaysStoppedAnimation<Color>(riskColor),
+                  minHeight: 10,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: riskColor.withOpacity(0.06),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '⚠️ Diseases to Watch',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: riskColor,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      district['diseases_flagged'] ?? 'None detected',
+                      style: const TextStyle(
+                          fontSize: 13, color: darkText, height: 1.5),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+
