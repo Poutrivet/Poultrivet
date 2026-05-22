@@ -462,5 +462,71 @@ const SizedBox(height: 12),
                   ),
                 ],
               ),
-          
+            const SizedBox(height: 16),
+              Row(
+                children: [
+                  _envItem('🌿', 'Vegetation', '${env['vegetation_ndvi'] ?? 0}',
+                      'NDVI'),
+                  _envItem('💧', 'Moisture', '${env['moisture_index'] ?? 0}',
+                      'NDMI'),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  _envItem('🌡️', 'Temperature',
+                      '${env['temperature_celsius'] ?? 0}°C', 'LST'),
+                  _envItem('🌊', 'Water',
+                      '${env['water_presence_percent'] ?? 0}%', 'JRC'),
+                ],
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+
+        // Farmer advice
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: lightGreen,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('💡', style: TextStyle(fontSize: 20)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Farmer Advice',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: primaryGreen,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      district['farmer_advice'] ?? '',
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.green[800],
+                        height: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
 
