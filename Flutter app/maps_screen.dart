@@ -129,18 +129,18 @@ child: Container(
 width: 16,
 height: 16,
 decoration: const BoxDecoration(
-  color: Colors.red,
-  shape: BoxShape.circle,
+color: Colors.red,
+shape: BoxShape.circle,
 ),
 child: const Center(
-  child: Text(
-    '3',
-    style: TextStyle(
-      color: Colors.white,
-      fontSize: 9,
-      fontWeight: FontWeight.bold,
-    ),
+child: Text(
+  '3',
+  style: TextStyle(
+    color: Colors.white,
+    fontSize: 9,
+    fontWeight: FontWeight.bold,
   ),
+),
 ),
 ),
 ),
@@ -176,9 +176,9 @@ color: cardColor,
 borderRadius: BorderRadius.circular(16),
 boxShadow: [
 BoxShadow(
-  color: Colors.black.withOpacity(0.06),
-  blurRadius: 10,
-  offset: const Offset(0, 4),
+color: Colors.black.withOpacity(0.06),
+blurRadius: 10,
+offset: const Offset(0, 4),
 ),
 ],
 ),
@@ -194,34 +194,34 @@ fontWeight: FontWeight.w500,
 decoration: InputDecoration(
 hintText: 'Type district name e.g. Kampala',
 hintStyle: TextStyle(
-  color: greyText,
-  fontSize: 14,
-  fontWeight: FontWeight.normal,
+color: greyText,
+fontSize: 14,
+fontWeight: FontWeight.normal,
 ),
 prefixIcon: const Icon(Icons.search, color: primaryGreen),
 suffixIcon: _searchController.text.isNotEmpty
-    ? IconButton(
-        icon: Icon(Icons.close, color: greyText),
-        onPressed: () {
-          _searchController.clear();
-          setState(() {
-            _hasSearched = false;
-            _districtData = null;
-            _error = null;
-          });
-        },
-      )
+  ? IconButton(
+      icon: Icon(Icons.close, color: greyText),
+      onPressed: () {
+        _searchController.clear();
+        setState(() {
+          _hasSearched = false;
+          _districtData = null;
+          _error = null;
+        });
+      },
+    )
 
 : null,
 border: OutlineInputBorder(
-  borderRadius: BorderRadius.circular(16),
-  borderSide: BorderSide.none,
+borderRadius: BorderRadius.circular(16),
+borderSide: BorderSide.none,
 ),
 filled: true,
 fillColor: cardColor,
 contentPadding: const EdgeInsets.symmetric(
-  horizontal: 16,
-  vertical: 16,
+horizontal: 16,
+vertical: 16,
 ),
 ),
 ),
@@ -237,66 +237,66 @@ backgroundColor: primaryGreen,
 foregroundColor: Colors.white,
 padding: const EdgeInsets.symmetric(vertical: 16),
 shape: RoundedRectangleBorder(
-  borderRadius: BorderRadius.circular(16),
+borderRadius: BorderRadius.circular(16),
 ),
 elevation: 0,
 ),
 onPressed: _isLoading
-  ? null
-  : () => _searchDistrict(_searchController.text),
+? null
+: () => _searchDistrict(_searchController.text),
 child: _isLoading
-  ? const SizedBox(
-      height: 20,
-      width: 20,
-      child: CircularProgressIndicator(
-        color: Colors.white,
-        strokeWidth: 2,
-      ),
-    )
-  : const Text(
-      'CHECK RISK LEVEL',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        letterSpacing: 1,
-        fontSize: 14,
-      ),
+? const SizedBox(
+    height: 20,
+    width: 20,
+    child: CircularProgressIndicator(
+      color: Colors.white,
+      strokeWidth: 2,
     ),
+  )
+: const Text(
+    'CHECK RISK LEVEL',
+    style: TextStyle(
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1,
+      fontSize: 14,
+    ),
+  ),
 ),
 ),
 const SizedBox(height: 24),
 
 // Result
-        if (_hasSearched && !_isLoading) ...[
-          if (_error != null)
-            _buildErrorCard()
-          else if (_districtData != null)
-            _buildResultCard(),
-          const SizedBox(height: 24),
-        ],
-
-        // Quick search
-        if (!_hasSearched || _districtData == null) ...[
-          const Text(
-            'Quick Search',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              color: darkText,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            'Tap a district to check its risk level',
-            style: TextStyle(fontSize: 13, color: greyText),
-          ),
-          const SizedBox(height: 12),
-          _buildQuickSearch(),
-          const SizedBox(height: 24),
-        ],
-_buildInfoCard(),
+      if (_hasSearched && !_isLoading) ...[
+        if (_error != null)
+          _buildErrorCard()
+        else if (_districtData != null)
+          _buildResultCard(),
+        const SizedBox(height: 24),
       ],
-    ),
+
+      // Quick search
+      if (!_hasSearched || _districtData == null) ...[
+        const Text(
+          'Quick Search',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: darkText,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          'Tap a district to check its risk level',
+          style: TextStyle(fontSize: 13, color: greyText),
+        ),
+        const SizedBox(height: 12),
+        _buildQuickSearch(),
+        const SizedBox(height: 24),
+      ],
+_buildInfoCard(),
+    ],
   ),
+),
 );
 }
 
@@ -307,125 +307,125 @@ final riskColor = _getRiskColor(riskLevel);
 final env = district['environmental_conditions'] ?? {};
 
 return Column(
-  children: [
-    Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.06),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-        border: Border.all(
-          color: riskColor.withOpacity(0.3),
-          width: 1.5,
+children: [
+  Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(20),
+    decoration: BoxDecoration(
+      color: cardColor,
+      borderRadius: BorderRadius.circular(20),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.06),
+          blurRadius: 10,
+          offset: const Offset(0, 4),
         ),
+      ],
+      border: Border.all(
+        color: riskColor.withOpacity(0.3),
+        width: 1.5,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  district['district'] ?? '',
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: darkText,
-                  ),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                district['district'] ?? '',
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: darkText,
                 ),
               ),
+            ),
 
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                decoration: BoxDecoration(
-                  color: riskColor.withOpacity(0.12),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Icon(_getRiskIcon(riskLevel),
-                        color: riskColor, size: 16),
-                    const SizedBox(width: 6),
-                    Text(
-                      riskLevel,
-                      style: TextStyle(
-                        color: riskColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ],
-                ),
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              decoration: BoxDecoration(
+                color: riskColor.withOpacity(0.12),
+                borderRadius: BorderRadius.circular(20),
               ),
-            ],
+              child: Row(
+                children: [
+                  Icon(_getRiskIcon(riskLevel),
+                      color: riskColor, size: 16),
+                  const SizedBox(width: 6),
+                  Text(
+                    riskLevel,
+                    style: TextStyle(
+                      color: riskColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+    const SizedBox(height: 6),
+        Text('District · Uganda',
+            style: TextStyle(fontSize: 13, color: greyText)),
+        const SizedBox(height: 16),
+        Row(
+          children: [
+            Text('Risk Score: ',
+                style: TextStyle(fontSize: 13, color: greyText)),
+            Text(
+              '${district['risk_score'] ?? 0}/10',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+                color: riskColor,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: LinearProgressIndicator(
+            value: ((district['risk_score'] ?? 0) as num) / 10,
+            backgroundColor: riskColor.withOpacity(0.12),
+            valueColor: AlwaysStoppedAnimation<Color>(riskColor),
+            minHeight: 10,
           ),
-      const SizedBox(height: 6),
-          Text('District · Uganda',
-              style: TextStyle(fontSize: 13, color: greyText)),
-          const SizedBox(height: 16),
-          Row(
+        ),
+        const SizedBox(height: 16),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: riskColor.withOpacity(0.06),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Risk Score: ',
-                  style: TextStyle(fontSize: 13, color: greyText)),
               Text(
-                '${district['risk_score'] ?? 0}/10',
+                '⚠️ Diseases to Watch',
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: riskColor,
                 ),
               ),
+              const SizedBox(height: 6),
+              Text(
+                district['diseases_flagged'] ?? 'None detected',
+                style: const TextStyle(
+                    fontSize: 13, color: darkText, height: 1.5),
+              ),
             ],
           ),
-          const SizedBox(height: 8),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-            child: LinearProgressIndicator(
-              value: ((district['risk_score'] ?? 0) as num) / 10,
-              backgroundColor: riskColor.withOpacity(0.12),
-              valueColor: AlwaysStoppedAnimation<Color>(riskColor),
-              minHeight: 10,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              color: riskColor.withOpacity(0.06),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '⚠️ Diseases to Watch',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: riskColor,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  district['diseases_flagged'] ?? 'None detected',
-                  style: const TextStyle(
-                      fontSize: 13, color: darkText, height: 1.5),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     ),
-    const SizedBox(height: 12),
+  ),
+  const SizedBox(height: 12),
 
