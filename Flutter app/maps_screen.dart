@@ -336,33 +336,33 @@ Expanded(
 child: Text(
 district['district'] ?? '',
 style: const TextStyle(
-  fontSize: 20,
-  fontWeight: FontWeight.bold,
-  color: darkText,
+fontSize: 20,
+fontWeight: FontWeight.bold,
+color: darkText,
 ),
 ),
 ),
 
 Container(
 padding:
-  const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
 decoration: BoxDecoration(
 color: riskColor.withOpacity(0.12),
 borderRadius: BorderRadius.circular(20),
 ),
 child: Row(
 children: [
-  Icon(_getRiskIcon(riskLevel),
-      color: riskColor, size: 16),
-  const SizedBox(width: 6),
-  Text(
-    riskLevel,
-    style: TextStyle(
-      color: riskColor,
-      fontWeight: FontWeight.bold,
-      fontSize: 13,
-    ),
+Icon(_getRiskIcon(riskLevel),
+    color: riskColor, size: 16),
+const SizedBox(width: 6),
+Text(
+  riskLevel,
+  style: TextStyle(
+    color: riskColor,
+    fontWeight: FontWeight.bold,
+    fontSize: 13,
   ),
+),
 ],
 ),
 ),
@@ -410,16 +410,16 @@ children: [
 Text(
 '⚠️ Diseases to Watch',
 style: TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.bold,
-  color: riskColor,
+fontSize: 12,
+fontWeight: FontWeight.bold,
+color: riskColor,
 ),
 ),
 const SizedBox(height: 6),
 Text(
 district['diseases_flagged'] ?? 'None detected',
 style: const TextStyle(
-    fontSize: 13, color: darkText, height: 1.5),
+  fontSize: 13, color: darkText, height: 1.5),
 ),
 ],
 ),
@@ -438,9 +438,9 @@ color: cardColor,
 borderRadius: BorderRadius.circular(20),
 boxShadow: [
 BoxShadow(
-  color: Colors.black.withOpacity(0.06),
-  blurRadius: 10,
-  offset: const Offset(0, 4),
+color: Colors.black.withOpacity(0.06),
+blurRadius: 10,
+offset: const Offset(0, 4),
 ),
 ],
 ),
@@ -448,37 +448,37 @@ child: Column(
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [
 Row(
-  children: [
-    const Icon(Icons.satellite_alt,
-        color: primaryGreen, size: 18),
-    const SizedBox(width: 8),
-    const Text(
-      'Satellite Environmental Data',
-      style: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.bold,
-        color: darkText,
-      ),
+children: [
+  const Icon(Icons.satellite_alt,
+      color: primaryGreen, size: 18),
+  const SizedBox(width: 8),
+  const Text(
+    'Satellite Environmental Data',
+    style: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: darkText,
     ),
-  ],
+  ),
+],
 ),
 const SizedBox(height: 16),
 Row(
-  children: [
-    _envItem('🌿', 'Vegetation', '${env['vegetation_ndvi'] ?? 0}',
-        'NDVI'),
-    _envItem('💧', 'Moisture', '${env['moisture_index'] ?? 0}',
-        'NDMI'),
-  ],
+children: [
+  _envItem('🌿', 'Vegetation', '${env['vegetation_ndvi'] ?? 0}',
+      'NDVI'),
+  _envItem('💧', 'Moisture', '${env['moisture_index'] ?? 0}',
+      'NDMI'),
+],
 ),
 const SizedBox(height: 12),
 Row(
-  children: [
-    _envItem('🌡️', 'Temperature',
-        '${env['temperature_celsius'] ?? 0}°C', 'LST'),
-    _envItem('🌊', 'Water',
-        '${env['water_presence_percent'] ?? 0}%', 'JRC'),
-  ],
+children: [
+  _envItem('🌡️', 'Temperature',
+      '${env['temperature_celsius'] ?? 0}°C', 'LST'),
+  _envItem('🌊', 'Water',
+      '${env['water_presence_percent'] ?? 0}%', 'JRC'),
+],
 ),
 ],
 ),
@@ -499,28 +499,28 @@ children: [
 const Text('💡', style: TextStyle(fontSize: 20)),
 const SizedBox(width: 12),
 Expanded(
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      const Text(
-        'Farmer Advice',
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-          color: primaryGreen,
-        ),
+child: Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    const Text(
+      'Farmer Advice',
+      style: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+        color: primaryGreen,
       ),
-      const SizedBox(height: 4),
-      Text(
-        district['farmer_advice'] ?? '',
-        style: TextStyle(
-          fontSize: 13,
-          color: Colors.green[800],
-          height: 1.5,
-        ),
+    ),
+    const SizedBox(height: 4),
+    Text(
+      district['farmer_advice'] ?? '',
+      style: TextStyle(
+        fontSize: 13,
+        color: Colors.green[800],
+        height: 1.5,
       ),
-    ],
-  ),
+    ),
+  ],
+),
 ),
 ],
 ),
