@@ -555,4 +555,8 @@ Widget _envItem(String emoji, String label, String value, String source) {
                     color: primaryGreen,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1)),
-  
+   ],
+        ),
+      ),
+    );
+  }
