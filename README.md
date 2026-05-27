@@ -1,8 +1,8 @@
-# 🛰️ PouliVet — Poultry Disease Early Warning System
+# 🛰️ PoultriVet — Poultry Disease Early Warning System
 
 <div align="center">
 
-![PouliVet Banner](docs/screenshots/banner.png)
+![PoultriVet Banner](docs/screenshots/banner.png)
 
 [![API Status](https://img.shields.io/badge/API-Live-brightgreen)](https://poulivetapi.onrender.com)
 [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
@@ -29,7 +29,7 @@ and 61% of farmers are more than 20km from the nearest veterinary officer.
 
 ## 💡 The Solution
 
-PouliVet combines two powerful technologies into one system:
+PoultriVet combines two powerful technologies into one system:
 
 | Component | Technology | What It Does |
 |-----------|-----------|--------------|
@@ -117,7 +117,7 @@ Deployment: Render.com · GitHub
 
 ## 🗂️ Repository Structure
 
-PouliVet/
+PoultriVet/
 
 │
 
