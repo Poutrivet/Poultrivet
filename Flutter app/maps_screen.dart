@@ -560,3 +560,31 @@ Widget _envItem(String emoji, String label, String value, String source) {
       ),
     );
   }
+Widget _buildErrorCard() {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: redRisk.withOpacity(0.3)),
+      ),
+      child: Column(
+        children: [
+          const Icon(Icons.search_off, color: redRisk, size: 40),
+          const SizedBox(height: 12),
+          Text(
+            _error ?? 'Something went wrong',
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Try: Kampala, Ntenjeru, Gulu, Mbarara',
+            style: TextStyle(
+                fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
+          ),
+        ],
+      ),
+    );
+  }
