@@ -588,3 +588,28 @@ Widget _buildErrorCard() {
       ),
     );
   }
+
+    Widget _buildQuickSearch() {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: _quickDistricts.map((district) {
+        return GestureDetector(
+          onTap: () {
+            _searchController.text = district;
+            _searchDistrict(district);
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            decoration: BoxDecoration(
+              color: cardColor,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 6,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+  
