@@ -529,4 +529,30 @@ child: Column(
 );
 }
 
-
+Widget _envItem(String emoji, String label, String value, String source) {
+    return Expanded(
+      child: Container(
+        margin: const EdgeInsets.only(right: 8),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: const Color(0xFFF8F8F8),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(emoji, style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 6),
+            Text(value,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: darkText)),
+            Text(label, style: TextStyle(fontSize: 11, color: greyText)),
+            Text(source,
+                style: const TextStyle(
+                    fontSize: 9,
+                    color: primaryGreen,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1)),
+  
