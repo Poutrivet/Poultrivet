@@ -535,26 +535,26 @@ child: Container(
 margin: const EdgeInsets.only(right: 8),
 padding: const EdgeInsets.all(12),
 decoration: BoxDecoration(
-  color: const Color(0xFFF8F8F8),
-  borderRadius: BorderRadius.circular(12),
+color: const Color(0xFFF8F8F8),
+borderRadius: BorderRadius.circular(12),
 ),
 child: Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-    Text(emoji, style: const TextStyle(fontSize: 18)),
-    const SizedBox(height: 6),
-    Text(value,
-        style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: darkText)),
-    Text(label, style: TextStyle(fontSize: 11, color: greyText)),
-    Text(source,
-        style: const TextStyle(
-            fontSize: 9,
-            color: primaryGreen,
-            fontWeight: FontWeight.w600,
-            letterSpacing: 1)),
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+  Text(emoji, style: const TextStyle(fontSize: 18)),
+  const SizedBox(height: 6),
+  Text(value,
+      style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: darkText)),
+  Text(label, style: TextStyle(fontSize: 11, color: greyText)),
+  Text(source,
+      style: const TextStyle(
+          fontSize: 9,
+          color: primaryGreen,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 1)),
 ],
 ),
 ),
@@ -571,19 +571,19 @@ border: Border.all(color: redRisk.withOpacity(0.3)),
 ),
 child: Column(
 children: [
-  const Icon(Icons.search_off, color: redRisk, size: 40),
-  const SizedBox(height: 12),
-  Text(
-    _error ?? 'Something went wrong',
-    textAlign: TextAlign.center,
-    style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
-  ),
-  const SizedBox(height: 8),
-  Text(
-    'Try: Kampala, Ntenjeru, Gulu, Mbarara',
-    style: TextStyle(
-        fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
-  ),
+const Icon(Icons.search_off, color: redRisk, size: 40),
+const SizedBox(height: 12),
+Text(
+  _error ?? 'Something went wrong',
+  textAlign: TextAlign.center,
+  style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
+),
+const SizedBox(height: 8),
+Text(
+  'Try: Kampala, Ntenjeru, Gulu, Mbarara',
+  style: TextStyle(
+      fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
+),
 ],
 ),
 );
@@ -595,21 +595,21 @@ spacing: 8,
 runSpacing: 8,
 children: _quickDistricts.map((district) {
 return GestureDetector(
-  onTap: () {
-    _searchController.text = district;
-    _searchDistrict(district);
-  },
-  child: Container(
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-    decoration: BoxDecoration(
-      color: cardColor,
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.05),
-          blurRadius: 6,
-          offset: const Offset(0, 2),
-        ),
-      ],
-    ),
+onTap: () {
+  _searchController.text = district;
+  _searchDistrict(district);
+},
+child: Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+  decoration: BoxDecoration(
+    color: cardColor,
+    borderRadius: BorderRadius.circular(20),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.05),
+        blurRadius: 6,
+        offset: const Offset(0, 2),
+      ),
+    ],
+  ),
 
