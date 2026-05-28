@@ -505,18 +505,18 @@ children: [
 const Text(
 'Farmer Advice',
 style: TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.bold,
-  color: primaryGreen,
+fontSize: 12,
+fontWeight: FontWeight.bold,
+color: primaryGreen,
 ),
 ),
 const SizedBox(height: 4),
 Text(
 district['farmer_advice'] ?? '',
 style: TextStyle(
-  fontSize: 13,
-  color: Colors.green[800],
-  height: 1.5,
+fontSize: 13,
+color: Colors.green[800],
+height: 1.5,
 ),
 ),
 ],
@@ -532,31 +532,31 @@ style: TextStyle(
 Widget _envItem(String emoji, String label, String value, String source) {
 return Expanded(
 child: Container(
-  margin: const EdgeInsets.only(right: 8),
-  padding: const EdgeInsets.all(12),
-  decoration: BoxDecoration(
-    color: const Color(0xFFF8F8F8),
-    borderRadius: BorderRadius.circular(12),
-  ),
-  child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(emoji, style: const TextStyle(fontSize: 18)),
-      const SizedBox(height: 6),
-      Text(value,
-          style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: darkText)),
-      Text(label, style: TextStyle(fontSize: 11, color: greyText)),
-      Text(source,
-          style: const TextStyle(
-              fontSize: 9,
-              color: primaryGreen,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 1)),
+margin: const EdgeInsets.only(right: 8),
+padding: const EdgeInsets.all(12),
+decoration: BoxDecoration(
+  color: const Color(0xFFF8F8F8),
+  borderRadius: BorderRadius.circular(12),
+),
+child: Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(emoji, style: const TextStyle(fontSize: 18)),
+    const SizedBox(height: 6),
+    Text(value,
+        style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: darkText)),
+    Text(label, style: TextStyle(fontSize: 11, color: greyText)),
+    Text(source,
+        style: const TextStyle(
+            fontSize: 9,
+            color: primaryGreen,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 1)),
 ],
-  ),
+),
 ),
 );
 }
@@ -565,26 +565,26 @@ return Container(
 width: double.infinity,
 padding: const EdgeInsets.all(20),
 decoration: BoxDecoration(
-  color: cardColor,
-  borderRadius: BorderRadius.circular(16),
-  border: Border.all(color: redRisk.withOpacity(0.3)),
+color: cardColor,
+borderRadius: BorderRadius.circular(16),
+border: Border.all(color: redRisk.withOpacity(0.3)),
 ),
 child: Column(
-  children: [
-    const Icon(Icons.search_off, color: redRisk, size: 40),
-    const SizedBox(height: 12),
-    Text(
-      _error ?? 'Something went wrong',
-      textAlign: TextAlign.center,
-      style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
-    ),
-    const SizedBox(height: 8),
-    Text(
-      'Try: Kampala, Ntenjeru, Gulu, Mbarara',
-      style: TextStyle(
-          fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
-    ),
-  ],
+children: [
+  const Icon(Icons.search_off, color: redRisk, size: 40),
+  const SizedBox(height: 12),
+  Text(
+    _error ?? 'Something went wrong',
+    textAlign: TextAlign.center,
+    style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
+  ),
+  const SizedBox(height: 8),
+  Text(
+    'Try: Kampala, Ntenjeru, Gulu, Mbarara',
+    style: TextStyle(
+        fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
+  ),
+],
 ),
 );
 }
@@ -594,22 +594,22 @@ return Wrap(
 spacing: 8,
 runSpacing: 8,
 children: _quickDistricts.map((district) {
-  return GestureDetector(
-    onTap: () {
-      _searchController.text = district;
-      _searchDistrict(district);
-    },
-    child: Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
+return GestureDetector(
+  onTap: () {
+    _searchController.text = district;
+    _searchDistrict(district);
+  },
+  child: Container(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+    decoration: BoxDecoration(
+      color: cardColor,
+      borderRadius: BorderRadius.circular(20),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.05),
+          blurRadius: 6,
+          offset: const Offset(0, 2),
+        ),
+      ],
+    ),
 
