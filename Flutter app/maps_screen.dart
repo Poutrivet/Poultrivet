@@ -353,15 +353,15 @@ borderRadius: BorderRadius.circular(20),
 child: Row(
 children: [
 Icon(_getRiskIcon(riskLevel),
-    color: riskColor, size: 16),
+color: riskColor, size: 16),
 const SizedBox(width: 6),
 Text(
-  riskLevel,
-  style: TextStyle(
-    color: riskColor,
-    fontWeight: FontWeight.bold,
-    fontSize: 13,
-  ),
+riskLevel,
+style: TextStyle(
+color: riskColor,
+fontWeight: FontWeight.bold,
+fontSize: 13,
+),
 ),
 ],
 ),
@@ -419,7 +419,7 @@ const SizedBox(height: 6),
 Text(
 district['diseases_flagged'] ?? 'None detected',
 style: const TextStyle(
-  fontSize: 13, color: darkText, height: 1.5),
+fontSize: 13, color: darkText, height: 1.5),
 ),
 ],
 ),
@@ -449,35 +449,35 @@ crossAxisAlignment: CrossAxisAlignment.start,
 children: [
 Row(
 children: [
-  const Icon(Icons.satellite_alt,
-      color: primaryGreen, size: 18),
-  const SizedBox(width: 8),
-  const Text(
-    'Satellite Environmental Data',
-    style: TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.bold,
-      color: darkText,
-    ),
-  ),
+const Icon(Icons.satellite_alt,
+  color: primaryGreen, size: 18),
+const SizedBox(width: 8),
+const Text(
+'Satellite Environmental Data',
+style: TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+  color: darkText,
+),
+),
 ],
 ),
 const SizedBox(height: 16),
 Row(
 children: [
-  _envItem('🌿', 'Vegetation', '${env['vegetation_ndvi'] ?? 0}',
-      'NDVI'),
-  _envItem('💧', 'Moisture', '${env['moisture_index'] ?? 0}',
-      'NDMI'),
+_envItem('🌿', 'Vegetation', '${env['vegetation_ndvi'] ?? 0}',
+  'NDVI'),
+_envItem('💧', 'Moisture', '${env['moisture_index'] ?? 0}',
+  'NDMI'),
 ],
 ),
 const SizedBox(height: 12),
 Row(
 children: [
-  _envItem('🌡️', 'Temperature',
-      '${env['temperature_celsius'] ?? 0}°C', 'LST'),
-  _envItem('🌊', 'Water',
-      '${env['water_presence_percent'] ?? 0}%', 'JRC'),
+_envItem('🌡️', 'Temperature',
+  '${env['temperature_celsius'] ?? 0}°C', 'LST'),
+_envItem('🌊', 'Water',
+  '${env['water_presence_percent'] ?? 0}%', 'JRC'),
 ],
 ),
 ],
@@ -500,26 +500,26 @@ const Text('💡', style: TextStyle(fontSize: 20)),
 const SizedBox(width: 12),
 Expanded(
 child: Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-    const Text(
-      'Farmer Advice',
-      style: TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.bold,
-        color: primaryGreen,
-      ),
-    ),
-    const SizedBox(height: 4),
-    Text(
-      district['farmer_advice'] ?? '',
-      style: TextStyle(
-        fontSize: 13,
-        color: Colors.green[800],
-        height: 1.5,
-      ),
-    ),
-  ],
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+const Text(
+  'Farmer Advice',
+  style: TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    color: primaryGreen,
+  ),
+),
+const SizedBox(height: 4),
+Text(
+  district['farmer_advice'] ?? '',
+  style: TextStyle(
+    fontSize: 13,
+    color: Colors.green[800],
+    height: 1.5,
+  ),
+),
+],
 ),
 ),
 ],
@@ -530,86 +530,86 @@ child: Column(
 }
 
 Widget _envItem(String emoji, String label, String value, String source) {
-    return Expanded(
-      child: Container(
-        margin: const EdgeInsets.only(right: 8),
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: const Color(0xFFF8F8F8),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(emoji, style: const TextStyle(fontSize: 18)),
-            const SizedBox(height: 6),
-            Text(value,
-                style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: darkText)),
-            Text(label, style: TextStyle(fontSize: 11, color: greyText)),
-            Text(source,
-                style: const TextStyle(
-                    fontSize: 9,
-                    color: primaryGreen,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1)),
-   ],
-        ),
-      ),
-    );
-  }
+return Expanded(
+  child: Container(
+    margin: const EdgeInsets.only(right: 8),
+    padding: const EdgeInsets.all(12),
+    decoration: BoxDecoration(
+      color: const Color(0xFFF8F8F8),
+      borderRadius: BorderRadius.circular(12),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(emoji, style: const TextStyle(fontSize: 18)),
+        const SizedBox(height: 6),
+        Text(value,
+            style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: darkText)),
+        Text(label, style: TextStyle(fontSize: 11, color: greyText)),
+        Text(source,
+            style: const TextStyle(
+                fontSize: 9,
+                color: primaryGreen,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 1)),
+],
+    ),
+  ),
+);
+}
 Widget _buildErrorCard() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: cardColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: redRisk.withOpacity(0.3)),
+return Container(
+  width: double.infinity,
+  padding: const EdgeInsets.all(20),
+  decoration: BoxDecoration(
+    color: cardColor,
+    borderRadius: BorderRadius.circular(16),
+    border: Border.all(color: redRisk.withOpacity(0.3)),
+  ),
+  child: Column(
+    children: [
+      const Icon(Icons.search_off, color: redRisk, size: 40),
+      const SizedBox(height: 12),
+      Text(
+        _error ?? 'Something went wrong',
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
       ),
-      child: Column(
-        children: [
-          const Icon(Icons.search_off, color: redRisk, size: 40),
-          const SizedBox(height: 12),
-          Text(
-            _error ?? 'Something went wrong',
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 14, color: darkText, height: 1.5),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'Try: Kampala, Ntenjeru, Gulu, Mbarara',
-            style: TextStyle(
-                fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
-          ),
-        ],
+      const SizedBox(height: 8),
+      Text(
+        'Try: Kampala, Ntenjeru, Gulu, Mbarara',
+        style: TextStyle(
+            fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
       ),
-    );
-  }
+    ],
+  ),
+);
+}
 
-    Widget _buildQuickSearch() {
-    return Wrap(
-      spacing: 8,
-      runSpacing: 8,
-      children: _quickDistricts.map((district) {
-        return GestureDetector(
-          onTap: () {
-            _searchController.text = district;
-            _searchDistrict(district);
-          },
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 6,
-                  offset: const Offset(0, 2),
-                ),
-              ],
+Widget _buildQuickSearch() {
+return Wrap(
+  spacing: 8,
+  runSpacing: 8,
+  children: _quickDistricts.map((district) {
+    return GestureDetector(
+      onTap: () {
+        _searchController.text = district;
+        _searchDistrict(district);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 6,
+              offset: const Offset(0, 2),
             ),
-  
+          ],
+        ),
+
