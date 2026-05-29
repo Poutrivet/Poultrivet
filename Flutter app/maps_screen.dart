@@ -544,17 +544,17 @@ children: [
 Text(emoji, style: const TextStyle(fontSize: 18)),
 const SizedBox(height: 6),
 Text(value,
-    style: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
-        color: darkText)),
+style: const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: darkText)),
 Text(label, style: TextStyle(fontSize: 11, color: greyText)),
 Text(source,
-    style: const TextStyle(
-        fontSize: 9,
-        color: primaryGreen,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 1)),
+style: const TextStyle(
+    fontSize: 9,
+    color: primaryGreen,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1)),
 ],
 ),
 ),
@@ -582,7 +582,7 @@ const SizedBox(height: 8),
 Text(
 'Try: Kampala, Ntenjeru, Gulu, Mbarara',
 style: TextStyle(
-    fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
+fontSize: 12, color: greyText, fontStyle: FontStyle.italic),
 ),
 ],
 ),
@@ -602,14 +602,14 @@ _searchDistrict(district);
 child: Container(
 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
 decoration: BoxDecoration(
-  color: cardColor,
-  borderRadius: BorderRadius.circular(20),
-  boxShadow: [
-    BoxShadow(
-      color: Colors.black.withOpacity(0.05),
-      blurRadius: 6,
-      offset: const Offset(0, 2),
-    ),
-  ],
+color: cardColor,
+borderRadius: BorderRadius.circular(20),
+boxShadow: [
+BoxShadow(
+  color: Colors.black.withOpacity(0.05),
+  blurRadius: 6,
+  offset: const Offset(0, 2),
+),
+],
 ),
 
