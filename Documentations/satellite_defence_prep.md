@@ -132,7 +132,7 @@ That's it. Everything else — GEE, GAUL, zonal statistics, FastAPI — is imple
 **Why this answer is strong:**
 - It ties the numbers to a statistical methodology (percentile calibration)
 - It grounds them in Uganda's actual data, not invented numbers
-- It signals the system is generalisable — which is a contribution to knowledge
+- It signals the system is generalisable— which is a contribution to knowledge
 
 ---
 
