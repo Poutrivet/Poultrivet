@@ -6,7 +6,7 @@
 ## SECTION 1 — THE 60-SECOND MENTAL MODEL
 *Know this cold. This is your anchor when nerves hit.*
 
-PouliVet's satellite pipeline does ONE thing:
+PoultriVet's satellite pipeline does ONE thing:
 
 > It converts freely available satellite imagery into weekly disease risk scores for every district in Uganda, so farmers get warned BEFORE outbreaks happen instead of AFTER.
 
