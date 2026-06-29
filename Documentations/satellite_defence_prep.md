@@ -127,7 +127,7 @@ That's it. Everything else — GEE, GAUL, zonal statistics, FastAPI — is imple
 
 **The answer (memorise this):**
 
-> "We did not invent these thresholds. Every threshold is calibrated from the actual distribution of Uganda's own district data. We computed the 25th, 50th, and 75th percentile values for each indicator across all 164 Uganda districts. Districts above the 75th percentile — the most extreme 25% nationally — trigger the risk flag. This is called data-driven calibration, and it means our thresholds reflect what actually constitutes elevated risk in Uganda's specific environmental context, not generic global standards. If we redeployed PouliVet in Tanzania or Kenya, the same method would automatically produce country-appropriate thresholds."
+> "We did not invent these thresholds. Every threshold is calibrated from the actual distribution of Uganda's own district data. We computed the 25th, 50th, and 75th percentile values for each indicator across all 164 Uganda districts. Districts above the 75th percentile — the most extreme 25% nationally — trigger the risk flag. This is called data-driven calibration, and it means our thresholds reflect what actually constitutes elevated risk in Uganda's specific environmental context, not generic global standards. If we redeployed PoultriVet in Tanzania or Kenya, the same method would automatically produce country-appropriate thresholds."
 
 **Why this answer is strong:**
 - It ties the numbers to a statistical methodology (percentile calibration)
