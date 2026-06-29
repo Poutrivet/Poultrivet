@@ -162,7 +162,7 @@ That's it. Everything else — GEE, GAUL, zonal statistics, FastAPI — is imple
 
 ### Q4 — "Why Google Earth Engine? Why not download the imagery directly?"
 **Model answer:**
-> "Downloading the raw Sentinel-2 imagery for all of Uganda at 10-metre resolution over a 4-month period would require terabytes of storage and weeks of local processing time. Google Earth Engine hosts petabytes of satellite imagery on Google's infrastructure and lets us send Python instructions to their servers — they do the computation and return only the small result table we need. This architectural choice is what makes a project of PouliVet's scope feasible for a final-year research project. Without GEE we'd need expensive geospatial server infrastructure."
+> "Downloading the raw Sentinel-2 imagery for all of Uganda at 10-metre resolution over a 4-month period would require terabytes of storage and weeks of local processing time. Google Earth Engine hosts petabytes of satellite imagery on Google's infrastructure and lets us send Python instructions to their servers — they do the computation and return only the small result table we need. This architectural choice is what makes a project of poultriVet's scope feasible for a final-year research project. Without GEE we'd need expensive geospatial server infrastructure."
 
 ---
 
