@@ -242,7 +242,7 @@ _Yiga Marvin Isaac_ - **Machine Learning Lead**
 ---
   Demo video available at :  https://youtu.be/rpjzk3fj5Qw?si=JZp0in2gpMkZnteC
 
-  APK avaialable at :
+  APK available at: https://drive.google.com/drive/folders/150inmKrG_Jc7IAD1AXgaHVjHUFL1peC0?usp=sharing
 
 ## 📄 License
 
