@@ -240,6 +240,7 @@ _Nsubuga Jeremiah_ - **Research and Innovation Lead**
 _Yiga Marvin Isaac_ - **Machine Learning Lead**
 
 ---
+  Demo video available at :
 
 ## 📄 License
 
