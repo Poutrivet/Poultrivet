@@ -242,6 +242,8 @@ _Yiga Marvin Isaac_ - **Machine Learning Lead**
 ---
   Demo video available at :  https://youtu.be/rpjzk3fj5Qw?si=JZp0in2gpMkZnteC
 
+  APK avaialable at :
+
 ## 📄 License
 
 MIT License — see [LICENSE](LICENSE) for details.
